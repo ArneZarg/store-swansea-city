@@ -1,0 +1,59 @@
+<style>
+    #cart-progress-bar .progress-container{
+        width:100%;
+        height:8px;
+        background:#EBEBEB;
+        border-radius:8px;
+        position:relative;
+        overflow:hidden;
+    }
+    #cart-progress-bar .progress-value{
+        width:{{ cart.items_subtotal_price | money_without_currency}}%;
+        max-width:100%;
+        position:absolute;
+        left:0;
+        top:0;
+        height:100%;
+        border-radius:8px;
+        background:#327736;
+    }
+    #cart-progress-bar .remainder{
+        font-weight:bold;
+    }
+</style>
+{% assign remainder = 10000 | minus:cart.total_price %}
+<div id="cart-progress-bar">
+    <div class="progress-message">
+        {% if remainder > 0 %}
+        Spend <span class="remainder">{{ remainder | money_without_trailing_zeros }}</span> more to reach free shipping!
+        {% else %}
+        You have earned <strong>FREE</strong> shipping!
+        {% endif %}
+    </div>
+    <div class="progress-container">
+        <div class="progress-value"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('cart:updated',(e)=>{
+        const {cart} = event.detail;
+        updateProgressBar(cart);
+        updateMessage(cart);
+    })
+    const updateProgressBar = (cart) => {
+        const {total_price} = cart;
+        const total_price_float = total_price/100.0;
+        const progressVal = document.querySelector('#cart-progress-bar .progress-value');
+        progressVal.style.width = `${total_price_float}%`;
+    }
+    const updateMessage = (cart) => {
+        const {total_price} = cart;
+        const total_price_float = total_price/100.0;
+        const remainder = 100 - total_price_float;
+        const currency = "{{ cart.total_price | money }}"[0];
+        const remainderTxt = document.querySelector('#cart-progress-bar .remainder');
+        const money_format = `${currency}${remainder}`;
+        remainderTxt.textContent = `${money_format}`;
+    }
+</script>
