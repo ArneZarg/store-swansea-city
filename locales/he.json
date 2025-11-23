@@ -1,17 +1,8 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "404": {
       "title": "העמוד לא נמצא",
-      "subtext_html": "<a href=\"/\">חזרה לדף הבית</a> או <a href=\"javascript:history.back()\">חזרה לעמוד הקודם</a>",
+      "subtext_html": "<a href=\"\/\">חזרה לדף הבית<\/a> או <a href=\"javascript:history.back()\">חזרה לעמוד הקודם<\/a>",
       "back_to_home": "מעבר לדף הבית",
       "continue_shopping": "המשיכו לקנות"
     },
@@ -54,7 +45,7 @@
       "login_form_password": "סיסמה",
       "login_form_error": "סיסמה שגויה!",
       "login_form_submit": "כניסה",
-      "admin_link_html": "האם אתה בעל החנות? <a href=\"/admin\" class=\"text-link\"> התחבר כאן </a>",
+      "admin_link_html": "האם אתה בעל החנות? <a href=\"\/admin\" class=\"text-link\"> התחבר כאן <\/a>",
       "powered_by_shopify_html": "חנות זו מופעלת על ידי {{ shopify }}"
     },
     "breadcrumbs": {
@@ -182,7 +173,7 @@
       "view_details": "הצג פרטים",
       "address_error": "שגיאה בחיפוש הכתובת הזו",
       "address_no_results": "אין תוצאות עבור כתובת זו",
-      "address_query_limit_html": "חרגת ממגבלת השימוש ב- Google API. שקול לשדרג ל<a href=\"https://developers.google.com/maps/premium/usage-limits\">תכנית פרימיום </a>.",
+      "address_query_limit_html": "חרגת ממגבלת השימוש ב- Google API. שקול לשדרג ל<a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">תכנית פרימיום <\/a>.",
       "auth_error_html": "הייתה בעיה באימות חשבון Google Maps שלך."
     },
     "slideshow": {
@@ -198,7 +189,7 @@
     "quick_order_list": {
       "product_total": "סכום ביניים מוצר",
       "view_cart": "צפייה בעגלה",
-      "each": "{{ money }}/יח'",
+      "each": "{{ money }}\/יח'",
       "product": "מוצר",
       "variant": "וריאציה",
       "variant_total": "סכום וריאציה",
@@ -252,9 +243,9 @@
       "cart_error": "אירעה שגיאה בעת עדכון העגלה שלך. אנא נסה שוב.",
       "cart_quantity_error_html": "אתה יכול להוסיף רק {{ quantity }} של פריט זה לעגלה שלך.",
       "taxes_and_shipping_at_checkout": "מיסים ומשלוח מחושבים בתשלום",
-      "taxes_and_shipping_policy_at_checkout_html": "מיסים ו<a href=\"{{ link }}\">משלוח</a> מחושבים בתשלום",
+      "taxes_and_shipping_policy_at_checkout_html": "מיסים ו<a href=\"{{ link }}\">משלוח<\/a> מחושבים בתשלום",
       "taxes_included_but_shipping_at_checkout": "המס כלול ומשלוח מחושב בתשלום",
-      "taxes_included_and_shipping_policy_html": "מס כלול. <a href=\"{{ link }}\">משלוח</a> מחושב בתשלום.",
+      "taxes_included_and_shipping_policy_html": "מס כלול. <a href=\"{{ link }}\">משלוח<\/a> מחושב בתשלום.",
       "update": "עדכון הזמנה",
       "checkout": "מעבר לתשלום",
       "we_accept": "אנחנו מקבלים",
@@ -310,10 +301,10 @@
     }
   },
   "localization": {
-    "country_label": "מדינה/אזור",
+    "country_label": "מדינה\/אזור",
     "language_label": "שפה",
     "update_language": "עדכון שפה",
-    "update_country": "עדכון מדינה/אזור"
+    "update_country": "עדכון מדינה\/אזור"
   },
   "contact": {
     "form": {
@@ -352,7 +343,7 @@
       "address1": "כתובת",
       "address2": "כתובת2",
       "city": "עיר",
-      "country": "מדינה / אזור",
+      "country": "מדינה \/ אזור",
       "province": "מחוז",
       "zip": "מיקוד",
       "phone": "טלפון",
@@ -467,7 +458,7 @@
       "shop_the_look": "קנה את המראה",
       "vendor": "ספק",
       "include_taxes": "כולל מס",
-      "shipping_policy_html": "<a href=\"{{ link }}\"> משלוח </a> מחושב בתשלום.",
+      "shipping_policy_html": "<a href=\"{{ link }}\"> משלוח <\/a> מחושב בתשלום.",
       "will_not_ship_until": "לא ישלח עד {{ date }}",
       "will_be_in_stock_after": "יחזור למלאי אחרי {{ date }}",
       "waiting_for_stock": "מלאי נוסף בדרך",
@@ -481,7 +472,7 @@
       "regular_price": "מחיר רגיל",
       "sale_price": "מחיר מבצע",
       "unit_price": "מחיר יחידה",
-      "from_price_html": "<small>החל מ-</small>{{ price }}"
+      "from_price_html": "<small>החל מ-<\/small>{{ price }}"
     },
     "media": {
       "open_media": "פתיחה מדיה {{ index }} במודל",
@@ -506,7 +497,7 @@
       "title": "מחיר כמותי",
       "note": "מחיר כמותי זמין",
       "minimum": "{{ quantity }}+",
-      "price_at_each": "במחיר {{ price }}/יח'",
+      "price_at_each": "במחיר {{ price }}\/יח'",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {
@@ -581,7 +572,7 @@
     }
   },
   "date_formats": {
-    "month_day_year": "%d/%m/%Y"
+    "month_day_year": "%d\/%m\/%Y"
   },
   "pagefly": {
     "products": {

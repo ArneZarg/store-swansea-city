@@ -1,6 +1,39 @@
 {
   "name": "overlay-group",
   "type": "header",
-  "sections": {},
-  "order": []
+  "sections": {
+    "cart_drawer_BcnQqy": {
+      "type": "cart-drawer",
+      "name": "Cart Drawer",
+      "settings": {
+        "show_vendor": true,
+        "show_cart_note": true,
+        "show_shipping_calculator": true,
+        "show_view_cart_button": true,
+        "show_checkout_button": true,
+        "show_free_shipping_bar": false,
+        "free_shipping_minimum_amount": "100",
+        "disclaimer_note_label": "Note:",
+        "disclaimer_text": "Personalised items cannot be returned or exchanged. Ensure that you have selected the correct details before checking out.",
+        "cart_recommendations_enabled": true,
+        "cart_recommendations_heading": "You may also like",
+        "cart_recommendations_limit": 5,
+        "show_cart_recommendations_vendor": false,
+        "show_cart_recommendations_price": true,
+        "show_cart_recommendations_quick_add": true,
+        "show_cart_recommendations_quick_view": true,
+        "cart_recommendations_products": [],
+        "empty_cart_message": "",
+        "empty_cart_collections": [],
+        "recent_products_enabled": true,
+        "cart_heading": "Your Cart",
+        "recent_products_limit": 5,
+        "show_recent_products_vendor": false,
+        "show_recent_products_price": true
+      }
+    }
+  },
+  "order": [
+    "cart_drawer_BcnQqy"
+  ]
 }

@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "404": {
@@ -54,7 +45,7 @@
       "login_form_password": "पासवर्ड",
       "login_form_error": "गलत पासवर्ड!",
       "login_form_submit": "प्रवेश करना",
-      "admin_link_html": "क्या आप दुकान के मालिक हैं? <a href=\"/admin\" class=\"link\">यहाँ लॉग इन करें</a>",
+      "admin_link_html": "क्या आप दुकान के मालिक हैं? <a href=\"\/admin\" class=\"link\">यहाँ लॉग इन करें<\/a>",
       "powered_by_shopify_html": "यह दुकान द्वारा संचालित होगी {{ shopify }}"
     },
     "breadcrumbs": {
@@ -182,8 +173,8 @@
       "view_details": "विवरण देखें",
       "address_error": "वह पता ढूंढने में त्रुटि हुई",
       "address_no_results": "उस पते के लिए कोई परिणाम नहीं",
-      "address_query_limit_html": "आपने Google API उपयोग सीमा पार कर ली है. <a href=\"https://developers.google.com/maps/premium/usage-limits\">प्रीमियम योजना</a> में अपग्रेड करने पर विचार करें।",
-      "auth_error_html": "आपके Google मानचित्र खाते को प्रमाणित करने में एक समस्या थी। अपने ऐप की <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">जावास्क्रिप्ट एपीआई</a> और <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">जियोकोडिंग एपीआई</a> अनुमतियां बनाएं और सक्षम करें।"
+      "address_query_limit_html": "आपने Google API उपयोग सीमा पार कर ली है. <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">प्रीमियम योजना<\/a> में अपग्रेड करने पर विचार करें।",
+      "auth_error_html": "आपके Google मानचित्र खाते को प्रमाणित करने में एक समस्या थी। अपने ऐप की <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">जावास्क्रिप्ट एपीआई<\/a> और <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">जियोकोडिंग एपीआई<\/a> अनुमतियां बनाएं और सक्षम करें।"
     },
     "slideshow": {
       "play_slideshow": "स्लाइड शो चलाएं",
@@ -198,7 +189,7 @@
     "quick_order_list": {
       "product_total": "उपयोग",
       "view_cart": "कार्ट देखें",
-      "each": "{{ money }}/ईए",
+      "each": "{{ money }}\/ईए",
       "product": "उत्पाद",
       "variant": "वेरिएंट",
       "variant_total": "वैरिएंट कुल",
@@ -251,9 +242,9 @@
       "subtotal": "उप-योग",
       "cart_error": "आपके कार्ट को अपडेट करते समय एक त्रुटि हुई. कृपया पुन: प्रयास करें।",
       "cart_quantity_error_html": "आप इस आइटम की केवल {{ quantity }} ही अपने कार्ट में जोड़ सकते हैं।",
-      "taxes_and_shipping_policy_at_checkout_html": "चेकआउट पर कर और <a href=\"{{ link }}\">शिपिंग की</a> गणना की जाती है",
+      "taxes_and_shipping_policy_at_checkout_html": "चेकआउट पर कर और <a href=\"{{ link }}\">शिपिंग की<\/a> गणना की जाती है",
       "taxes_included_but_shipping_at_checkout": "कर शामिल है और शिपिंग की गणना चेकआउट के समय की जाती है",
-      "taxes_included_and_shipping_policy_html": "टैक्स शामिल। <a href=\"{{ link }}\">शिपिंग की</a> गणना चेकआउट के समय की जाती है।",
+      "taxes_included_and_shipping_policy_html": "टैक्स शामिल। <a href=\"{{ link }}\">शिपिंग की<\/a> गणना चेकआउट के समय की जाती है।",
       "taxes_and_shipping_at_checkout": "कर शामिल हैं और शिपिंग की गणना चेकआउट के समय की जाती है।",
       "update": "कार्ट अपडेट करें",
       "checkout": "चेक आउट",
@@ -310,10 +301,10 @@
     }
   },
   "localization": {
-    "country_label": "देश/क्षेत्र",
+    "country_label": "देश\/क्षेत्र",
     "language_label": "भाषा",
     "update_language": "भाषा अद्यतन करें",
-    "update_country": "देश/क्षेत्र अपडेट करें"
+    "update_country": "देश\/क्षेत्र अपडेट करें"
   },
   "contact": {
     "form": {
@@ -352,9 +343,9 @@
       "address1": "पता 1",
       "address2": "पता द्वितीय",
       "city": "शहर",
-      "country": "देश/क्षेत्र",
+      "country": "देश\/क्षेत्र",
       "province": "प्रांत",
-      "zip": "डाक का / ज़िप कोड",
+      "zip": "डाक का \/ ज़िप कोड",
       "phone": "फ़ोन",
       "set_default": "डिफ़ॉल्ट पते के रूप में सेट करें",
       "add": "पता जोड़ें",
@@ -467,7 +458,7 @@
       "shop_the_look": "लुक खरीदें",
       "vendor": "विक्रेता",
       "include_taxes": "टैक्स शामिल।",
-      "shipping_policy_html": "<a href='{{ link }}'>शिपिंग की</a> गणना चेकआउट पर की जाएगी।",
+      "shipping_policy_html": "<a href='{{ link }}'>शिपिंग की<\/a> गणना चेकआउट पर की जाएगी।",
       "will_not_ship_until": "भेजने के लिए तैयार {{ date }}",
       "will_be_in_stock_after": "पिछली तरफ़ का भंडार {{ date }}",
       "waiting_for_stock": "इन्वेंटरी आने वाली है",
@@ -481,7 +472,7 @@
       "regular_price": "नियमित रूप से मूल्य",
       "sale_price": "विक्रय कीमत",
       "unit_price": "यूनिट मूल्य",
-      "from_price_html": "<small>से</small> {{ price }}"
+      "from_price_html": "<small>से<\/small> {{ price }}"
     },
     "media": {
       "open_media": "मीडिया {{ index }} को मोडल में खोलें",
@@ -506,7 +497,7 @@
       "title": "वॉल्यूम मूल्य निर्धारण",
       "note": "वॉल्यूम मूल्य निर्धारण उपलब्ध",
       "minimum": "{{ quantity }}+",
-      "price_at_each": "{{ price }}/ea पर",
+      "price_at_each": "{{ price }}\/ea पर",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {
@@ -528,9 +519,9 @@
       "view_store_info": "स्टोर जानकारी देखें",
       "check_other_stores": "अन्य दुकानों पर उपलब्धता की जाँच करें",
       "pick_up_available": "पिकअप उपलब्ध है",
-      "pick_up_available_at_html": "पिकअप यहां उपलब्ध है <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_available_at_html": "पिकअप यहां उपलब्ध है <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "pick_up_unavailable": "पिकअप वर्तमान में उपलब्ध नहीं है",
-      "pick_up_unavailable_at_html": "पिकअप फिलहाल अनुपलब्ध है <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_unavailable_at_html": "पिकअप फिलहाल अनुपलब्ध है <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "unavailable": "पिकअप उपलब्धता लोड नहीं की जा सकी",
       "refresh": "ताज़ा करना"
     },

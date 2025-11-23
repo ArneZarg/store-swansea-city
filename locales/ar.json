@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "404": {
@@ -54,7 +45,7 @@
       "login_form_password": "كلمة المرور",
       "login_form_error": "كلمة المرور خاطئة!",
       "login_form_submit": "يدخل",
-      "admin_link_html": "هل أنت صاحب المتجر؟ <a href=\"/admin\" class=\"link\">سجل دخولك هنا</a>",
+      "admin_link_html": "هل أنت صاحب المتجر؟ <a href=\"\/admin\" class=\"link\">سجل دخولك هنا<\/a>",
       "powered_by_shopify_html": "سيتم تشغيل هذا المتجر بواسطة {{ shopify }}"
     },
     "breadcrumbs": {
@@ -182,8 +173,8 @@
       "view_details": "عرض التفاصيل",
       "address_error": "خطأ في البحث عن هذا العنوان",
       "address_no_results": "لا توجد نتائج لهذا العنوان",
-      "address_query_limit_html": "لقد تجاوزت حد استخدام واجهة برمجة تطبيقات Google. فكر في الترقية إلى <a href=\"https://developers.google.com/maps/premium/usage-limits\">خطة Premium</a> .",
-      "auth_error_html": "حدثت مشكلة أثناء مصادقة حساب خرائط Google الخاص بك. قم بإنشاء وتمكين أذونات <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">واجهة برمجة تطبيقات JavaScript</a> وواجهة <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">برمجة تطبيقات الترميز الجغرافي</a> لتطبيقك."
+      "address_query_limit_html": "لقد تجاوزت حد استخدام واجهة برمجة تطبيقات Google. فكر في الترقية إلى <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">خطة Premium<\/a> .",
+      "auth_error_html": "حدثت مشكلة أثناء مصادقة حساب خرائط Google الخاص بك. قم بإنشاء وتمكين أذونات <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">واجهة برمجة تطبيقات JavaScript<\/a> وواجهة <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">برمجة تطبيقات الترميز الجغرافي<\/a> لتطبيقك."
     },
     "slideshow": {
       "play_slideshow": "تشغيل عرض الشرائح",
@@ -198,7 +189,7 @@
     "quick_order_list": {
       "product_total": "المجموع الفرعي للمنتج",
       "view_cart": "عرض عربة التسوق",
-      "each": "{{ money }} /كل",
+      "each": "{{ money }} \/كل",
       "product": "منتج",
       "variant": "متغير",
       "variant_total": "المجموع المتغير",
@@ -251,9 +242,9 @@
       "subtotal": "المجموع ",
       "cart_error": "حدث خطأ أثناء تحديث سلة التسوق الخاصة بك. يرجى المحاولة مرة أخرى.",
       "cart_quantity_error_html": "يمكنك فقط إضافة {{ quantity }} من هذا المنتج إلى سلة التسوق الخاصة بك.",
-      "taxes_and_shipping_policy_at_checkout_html": "يتم احتساب الضرائب <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">والشحن</a> عند الخروج",
+      "taxes_and_shipping_policy_at_checkout_html": "يتم احتساب الضرائب <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">والشحن<\/a> عند الخروج",
       "taxes_included_but_shipping_at_checkout": "الضريبة متضمنة ويتم إحتساب الشحن عند الدفع",
-      "taxes_included_and_shipping_policy_html": "شامل الضريبة. يتم احتساب <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">الشحن</a> عند إتمام عملية الشراء.",
+      "taxes_included_and_shipping_policy_html": "شامل الضريبة. يتم احتساب <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">الشحن<\/a> عند إتمام عملية الشراء.",
       "taxes_and_shipping_at_checkout": "الضرائب متضمنة و الشحن محسوب عند الخروج.",
       "update": "تحديث العربة",
       "checkout": "الدفع",
@@ -310,10 +301,10 @@
     }
   },
   "localization": {
-    "country_label": "البلد/المنطقة",
+    "country_label": "البلد\/المنطقة",
     "language_label": "اللغة",
     "update_language": "تحديث اللغة",
-    "update_country": "تحديث البلد/المنطقة"
+    "update_country": "تحديث البلد\/المنطقة"
   },
   "contact": {
     "form": {
@@ -352,7 +343,7 @@
       "address1": "العنوان 1",
       "address2": "العنوان 2",
       "city": "المدينة",
-      "country": "البلد/المنطقة",
+      "country": "البلد\/المنطقة",
       "province": "مقاطعة",
       "zip": "الرمز البريدي",
       "phone": "الهاتف",
@@ -467,7 +458,7 @@
       "shop_the_look": "تسوق الإطلالة",
       "vendor": "بائع",
       "include_taxes": "الضريبة متضمنة.",
-      "shipping_policy_html": "<a href='{{ link }}'>يتم احتساب الشحن</a> عند الخروج.",
+      "shipping_policy_html": "<a href='{{ link }}'>يتم احتساب الشحن<\/a> عند الخروج.",
       "will_not_ship_until": "جاهز للشحن {{ date }}",
       "will_be_in_stock_after": "متوفر مرة أخرى في المخزون {{ date }}",
       "waiting_for_stock": "المخزون في الطريق",
@@ -481,7 +472,7 @@
       "regular_price": "السعر العادي",
       "sale_price": "سعر البيع",
       "unit_price": "سعر الوحدة",
-      "from_price_html": "<small>من</small> {{ price }}"
+      "from_price_html": "<small>من<\/small> {{ price }}"
     },
     "media": {
       "open_media": "افتح الوسائط {{ index }} في النافذة المنبثقة",
@@ -506,7 +497,7 @@
       "title": "تسعير الحجم",
       "note": "التسعير بالكميات المتاحة",
       "minimum": "{{ quantity }} +",
-      "price_at_each": "بسعر {{ price }} /للقطعة",
+      "price_at_each": "بسعر {{ price }} \/للقطعة",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {

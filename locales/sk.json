@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "404": {
@@ -54,7 +45,7 @@
       "login_form_password": "Heslo",
       "login_form_error": "Nesprávne heslo!",
       "login_form_submit": "Prihlásiť sa",
-      "admin_link_html": "Ste majiteľ obchodu? <a href=\"/admin\" class=\"link\">Prihlásiť sa tu</a> ",
+      "admin_link_html": "Ste majiteľ obchodu? <a href=\"\/admin\" class=\"link\">Prihlásiť sa tu<\/a> ",
       "powered_by_shopify_html": "Tento obchod bude podporovaný platformou {{ shopify }}"
     },
     "breadcrumbs": {
@@ -182,8 +173,8 @@
       "view_details": "Zobraziť podrobnosti",
       "address_error": "Chyba pri vyhľadávaní tejto adresy ",
       "address_no_results": "Žiadne výsledky pre túto adresy ",
-      "address_query_limit_html": "Prekročili ste limit využitia Google API. Zvážte prechod na <a href=\"https://developers.google.com/maps/premium/usasge-limits\">Prémiový Plán.</a> . ",
-      "auth_error_html": "Vyskytol sa problém s overením vášho účtu Google Maps. Vytvorte a povoľte <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> a <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> <a></a>oprávnenia pre vašu aplikáciu."
+      "address_query_limit_html": "Prekročili ste limit využitia Google API. Zvážte prechod na <a href=\"https:\/\/developers.google.com\/maps\/premium\/usasge-limits\">Prémiový Plán.<\/a> . ",
+      "auth_error_html": "Vyskytol sa problém s overením vášho účtu Google Maps. Vytvorte a povoľte <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> a <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a> <a><\/a>oprávnenia pre vašu aplikáciu."
     },
     "slideshow": {
       "play_slideshow": "Spustiť prezentáciu",
@@ -198,7 +189,7 @@
     "quick_order_list": {
       "product_total": "Medzisúčet produktov",
       "view_cart": "Zobraziť košík",
-      "each": "{{ money }}/kus",
+      "each": "{{ money }}\/kus",
       "product": "Produkt",
       "variant": "Variant",
       "variant_total": "Celková suma variantov",
@@ -251,9 +242,9 @@
       "subtotal": "Medzisúčet",
       "cart_error": "Pri aktualizácii košíka sa vyskytla chyba. Skúste to znova.",
       "cart_quantity_error_html": "Do košíka môžete túto položku pridať len v počte {{ quantity }}.",
-      "taxes_and_shipping_policy_at_checkout_html": "Dane a <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">doprava</a> budú pripočítané na stránke doprava a platba v pokladni.",
+      "taxes_and_shipping_policy_at_checkout_html": "Dane a <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">doprava<\/a> budú pripočítané na stránke doprava a platba v pokladni.",
       "taxes_included_but_shipping_at_checkout": "Suma vrátane DPH.",
-      "taxes_included_and_shipping_policy_html": "Daň je zahrnutá. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">Doprava</a> bude pripočítaná na stránke doprava a platba v pokladni.",
+      "taxes_included_and_shipping_policy_html": "Daň je zahrnutá. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Doprava<\/a> bude pripočítaná na stránke doprava a platba v pokladni.",
       "taxes_and_shipping_at_checkout": "Dane sú zahrnuté. Doprava bude pripočítaná na stránke doprava a platby v pokladni.",
       "update": "Aktualizovať košík",
       "checkout": "Pokladňa",
@@ -310,10 +301,10 @@
     }
   },
   "localization": {
-    "country_label": "Krajina/oblasť",
+    "country_label": "Krajina\/oblasť",
     "language_label": "Jazyk",
     "update_language": "Aktualizovať jazyk",
-    "update_country": "Aktualizovať krajinu/oblasť"
+    "update_country": "Aktualizovať krajinu\/oblasť"
   },
   "contact": {
     "form": {
@@ -352,7 +343,7 @@
       "address1": "Adresa 1",
       "address2": "Adresa 2",
       "city": "Mesto",
-      "country": "Krajina/oblasť",
+      "country": "Krajina\/oblasť",
       "province": "Provincia",
       "zip": "Poštové smerovacie číslo",
       "phone": "Telefón",
@@ -467,7 +458,7 @@
       "shop_the_look": "Nakupujte vzhľad",
       "vendor": "Predajca",
       "include_taxes": "Daň je zahrnutá v cene. ",
-      "shipping_policy_html": "<a href=\"&lt;span%20class=\" notranslate>{{ link }} '&gt;Doprava</a> bude pripočítaná na stránke doprava a platba v pokladni.",
+      "shipping_policy_html": "<a href=\"&lt;span%20class=\" notranslate>{{ link }} '&gt;Doprava<\/a> bude pripočítaná na stránke doprava a platba v pokladni.",
       "will_not_ship_until": "Pripravené na odoslanie {{ date }}",
       "will_be_in_stock_after": "Opäť skladom {{ date }}",
       "waiting_for_stock": "Tovar je na ceste",
@@ -481,7 +472,7 @@
       "regular_price": "Bežná cena",
       "sale_price": "Cena v akcii",
       "unit_price": "Jednotková cena",
-      "from_price_html": "<small>Od</small> {{ price }}"
+      "from_price_html": "<small>Od<\/small> {{ price }}"
     },
     "media": {
       "open_media": "Otvoriť médiá {{ index }} v modálnom okne",
@@ -506,7 +497,7 @@
       "title": "Cenová zľava na základe objemu",
       "note": "Dostupná cenová zľava na základe objemu",
       "minimum": "{{ quantity }} +",
-      "price_at_each": "za {{ price }} /ea",
+      "price_at_each": "za {{ price }} \/ea",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {
@@ -528,9 +519,9 @@
       "view_store_info": "Zobraziť informácie o obchode",
       "check_other_stores": "Skontrolovať dostupnosť v iných obchodoch",
       "pick_up_available": "Osobný odber",
-      "pick_up_available_at_html": "Osobný odber dostupný na <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_available_at_html": "Osobný odber dostupný na <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "pick_up_unavailable": "Osobný odber momentálne nie je dostupný",
-      "pick_up_unavailable_at_html": "Osobný odber momentálne nie je dostupný na <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_unavailable_at_html": "Osobný odber momentálne nie je dostupný na <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "unavailable": "Nepodarilo sa načítať dostupnosť pre osobný odber ",
       "refresh": "Obnoviť"
     },

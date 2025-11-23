@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "404": {
@@ -54,7 +45,7 @@
       "login_form_password": "Password",
       "login_form_error": "Password errata!",
       "login_form_submit": "Accedi",
-      "admin_link_html": "Sei il proprietario del negozio? <a href=\"/admin\" class=\"link\">Accedi qui</a>",
+      "admin_link_html": "Sei il proprietario del negozio? <a href=\"\/admin\" class=\"link\">Accedi qui<\/a>",
       "powered_by_shopify_html": "Questo negozio sarà ospitato su {{ shopify }}"
     },
     "breadcrumbs": {
@@ -182,8 +173,8 @@
       "view_details": "Visualizza i dettagli",
       "address_error": "Errore nella ricerca di questo indirizzo",
       "address_no_results": "Nessun risultato per questo indirizzo",
-      "address_query_limit_html": "Hai superato il limite di utilizzo delle API di Google. Considera l'aggiornamento ad un <a href=\"https://developers.google.com/maps/premium/usage-limits\">Piano Premium</a>.",
-      "auth_error_html": "Si è verificato un problema durante l'autenticazione del tuo account Google Maps. Crea e attiva i permessi <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> e  <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> della tua applicazione."
+      "address_query_limit_html": "Hai superato il limite di utilizzo delle API di Google. Considera l'aggiornamento ad un <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Piano Premium<\/a>.",
+      "auth_error_html": "Si è verificato un problema durante l'autenticazione del tuo account Google Maps. Crea e attiva i permessi <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> e  <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a> della tua applicazione."
     },
     "slideshow": {
       "play_slideshow": "Avvia presentazione",
@@ -198,7 +189,7 @@
     "quick_order_list": {
       "product_total": "Subtotale",
       "view_cart": "Visualizza carrello",
-      "each": "{{ money }}/ciascuno",
+      "each": "{{ money }}\/ciascuno",
       "product": "Prodotto",
       "variant": "Variante",
       "variant_total": "Totale varianti",
@@ -251,9 +242,9 @@
       "subtotal": "Subtotale",
       "cart_error": "Si è verificato un errore durante l'aggiornamento del carrello. Riprova più tardi.",
       "cart_quantity_error_html": "Puoi aggiungere soltanto {{ quantity }} di questo articolo al tuo carrello.",
-      "taxes_and_shipping_policy_at_checkout_html": "Imposte e <a href=\"{{ link }}\">spese di spedizione</a> calcolate al momento del check-out",
+      "taxes_and_shipping_policy_at_checkout_html": "Imposte e <a href=\"{{ link }}\">spese di spedizione<\/a> calcolate al momento del check-out",
       "taxes_included_but_shipping_at_checkout": "Imposte incluse e spese di spedizione calcolate al momento del check-out",
-      "taxes_included_and_shipping_policy_html": "Imposte incluse. <a href=\"{{ link }}\">Spese di spedizione</a> calcolate al check-out.",
+      "taxes_included_and_shipping_policy_html": "Imposte incluse. <a href=\"{{ link }}\">Spese di spedizione<\/a> calcolate al check-out.",
       "taxes_and_shipping_at_checkout": "Imposte e spese di spedizione calcolate al momento del check-out",
       "update": "Aggiorna",
       "checkout": "Check-out",
@@ -310,10 +301,10 @@
     }
   },
   "localization": {
-    "country_label": "Paese/Area geografica",
+    "country_label": "Paese\/Area geografica",
     "language_label": "Lingua",
     "update_language": "Aggiorna lingua",
-    "update_country": "Aggiorna paese/area geografica"
+    "update_country": "Aggiorna paese\/area geografica"
   },
   "contact": {
     "form": {
@@ -352,7 +343,7 @@
       "address1": "Indirizzo - campo 1",
       "address2": "Indirizzo - campo 2",
       "city": "Città",
-      "country": "Paese/Area geografica",
+      "country": "Paese\/Area geografica",
       "province": "Provincia",
       "zip": "CAP",
       "phone": "Numero di telefono",
@@ -467,7 +458,7 @@
       "shop_the_look": "Acquista il Look",
       "vendor": "Fornitore",
       "include_taxes": "Imposte incluse.",
-      "shipping_policy_html": "<a href='{{ link }}'>Spedizione</a> calcolata alla cassa.",
+      "shipping_policy_html": "<a href='{{ link }}'>Spedizione<\/a> calcolata alla cassa.",
       "will_not_ship_until": "Pronto per la spedizione {{ date }}",
       "will_be_in_stock_after": "Di nuovo in magazzino {{ date }}",
       "waiting_for_stock": "Inventario in arrivo",
@@ -481,7 +472,7 @@
       "regular_price": "Prezzo di listino",
       "sale_price": "Prezzo scontato",
       "unit_price": "Prezzo unitario",
-      "from_price_html": "<small>Da</small> {{ price }}"
+      "from_price_html": "<small>Da<\/small> {{ price }}"
     },
     "media": {
       "open_media": "Apri contenuti multimediali {{ index }} in finestra modale",
@@ -506,7 +497,7 @@
       "title": "Prezzi basati sui volumi",
       "note": "Prezzi basati sui volumi disponibili",
       "minimum": "Più di {{ quantity }}",
-      "price_at_each": "a {{ price }}/ciascuno",
+      "price_at_each": "a {{ price }}\/ciascuno",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {

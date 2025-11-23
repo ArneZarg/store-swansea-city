@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "404": {
@@ -54,7 +45,7 @@
       "login_form_password": "Parolă",
       "login_form_error": "Parolă greșită!",
       "login_form_submit": "Intră",
-      "admin_link_html": "Sunteți proprietarul magazinului? <a href=\"/admin\" class=\"link\">Conectați-vă aici</a>",
+      "admin_link_html": "Sunteți proprietarul magazinului? <a href=\"\/admin\" class=\"link\">Conectați-vă aici<\/a>",
       "powered_by_shopify_html": "Acest magazin va fi alimentat de {{ shopify }}"
     },
     "breadcrumbs": {
@@ -182,8 +173,8 @@
       "view_details": "Vezi detalii",
       "address_error": "Eroare la căutarea acelei adrese",
       "address_no_results": "Nu există rezultate pentru adresa respectivă",
-      "address_query_limit_html": "Ați depășit limita de utilizare a API-ului Google. Luați în considerare trecerea la un <a href=\"https://developers.google.com/maps/premium/usage-limits\">plan Premium</a> .",
-      "auth_error_html": "A apărut o problemă la autentificarea contului dvs. Google Maps. Creați și activați permisiunile <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> și <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> ale aplicației dvs."
+      "address_query_limit_html": "Ați depășit limita de utilizare a API-ului Google. Luați în considerare trecerea la un <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">plan Premium<\/a> .",
+      "auth_error_html": "A apărut o problemă la autentificarea contului dvs. Google Maps. Creați și activați permisiunile <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> și <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a> ale aplicației dvs."
     },
     "slideshow": {
       "play_slideshow": "Redați prezentarea de diapozitive",
@@ -198,7 +189,7 @@
     "quick_order_list": {
       "product_total": "Subtotal produs",
       "view_cart": "Vezi coșul",
-      "each": "{{ money }}/buc.",
+      "each": "{{ money }}\/buc.",
       "product": "Produs",
       "variant": "Variantă",
       "variant_total": "Total variantă",
@@ -251,9 +242,9 @@
       "subtotal": "Subtotal",
       "cart_error": "A apărut o eroare în timpul actualizării coșului. Încercați din nou.",
       "cart_quantity_error_html": "Cantitatea maximă pe care o poți adăuga în coș din acest articol: {{ quantity }}.",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxele și <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">transportul</a> sunt calculate la finalizare",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxele și <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">transportul<\/a> sunt calculate la finalizare",
       "taxes_included_but_shipping_at_checkout": "Taxa inclusă și transportul calculat la finalizare",
-      "taxes_included_and_shipping_policy_html": "Taxe incluse. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">Livrare</a> calculată la checkout.",
+      "taxes_included_and_shipping_policy_html": "Taxe incluse. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Livrare<\/a> calculată la checkout.",
       "taxes_and_shipping_at_checkout": "Taxele incluse și transportul calculat la finalizare.",
       "update": "Actualizați coșul",
       "checkout": "Verifică",
@@ -310,10 +301,10 @@
     }
   },
   "localization": {
-    "country_label": "Țara/regiune",
+    "country_label": "Țara\/regiune",
     "language_label": "Limbă",
     "update_language": "Actualizați limba",
-    "update_country": "Actualizați țara/regiunea"
+    "update_country": "Actualizați țara\/regiunea"
   },
   "contact": {
     "form": {
@@ -352,9 +343,9 @@
       "address1": "Adresa 1",
       "address2": "Adresa 2",
       "city": "Oraş",
-      "country": "Țara/regiune",
+      "country": "Țara\/regiune",
       "province": "Provincie",
-      "zip": "Cod poștal/poștal",
+      "zip": "Cod poștal\/poștal",
       "phone": "Telefon",
       "set_default": "Setați ca adresă implicită",
       "add": "Adăugați adresa",
@@ -467,7 +458,7 @@
       "shop_the_look": "Cumpără Look-ul",
       "vendor": "Furnizor",
       "include_taxes": "Taxe incluse.",
-      "shipping_policy_html": "<a href=\"&lt;span%20class=\" notranslate>{{ link }} '&gt;Livrarea</a> calculată la finalizarea comenzii.",
+      "shipping_policy_html": "<a href=\"&lt;span%20class=\" notranslate>{{ link }} '&gt;Livrarea<\/a> calculată la finalizarea comenzii.",
       "will_not_ship_until": "Gata de expediat {{ date }}",
       "will_be_in_stock_after": "Înapoi în stoc {{ date }}",
       "waiting_for_stock": "Inventar pe drum",
@@ -481,7 +472,7 @@
       "regular_price": "Preț normal",
       "sale_price": "Pret de vanzare",
       "unit_price": "Preț unitar",
-      "from_price_html": "<small>De la</small> {{ price }}"
+      "from_price_html": "<small>De la<\/small> {{ price }}"
     },
     "media": {
       "open_media": "Deschideți media {{ index }} în mod modal",
@@ -506,7 +497,7 @@
       "title": "Stabilire preț per volum",
       "note": "Stabilirea prețului per volum este disponibilă",
       "minimum": "Peste {{ quantity }}",
-      "price_at_each": "la {{ price }}/buc.",
+      "price_at_each": "la {{ price }}\/buc.",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {
@@ -528,9 +519,9 @@
       "view_store_info": "Vizualizați informațiile despre magazin",
       "check_other_stores": "Verifica disponibilitatea in alte magazine",
       "pick_up_available": "Ridicare disponibilă",
-      "pick_up_available_at_html": "Ridicare disponibilă la <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_available_at_html": "Ridicare disponibilă la <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "pick_up_unavailable": "Ridicare indisponibilă momentan",
-      "pick_up_unavailable_at_html": "Ridicare indisponibilă momentan la <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_unavailable_at_html": "Ridicare indisponibilă momentan la <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "unavailable": "Nu s-a putut încărca disponibilitatea ridicării",
       "refresh": "Reîmprospăta"
     },

@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "404": {
@@ -54,7 +45,7 @@
       "login_form_password": "Şifre",
       "login_form_error": "Yanlış şifre!",
       "login_form_submit": "Girmek",
-      "admin_link_html": "Mağaza sahibi misiniz? <a href=\"/admin\" class=\"link\">Giriş yapın</a>",
+      "admin_link_html": "Mağaza sahibi misiniz? <a href=\"\/admin\" class=\"link\">Giriş yapın<\/a>",
       "powered_by_shopify_html": "Bu mağaza aşağıdakiler tarafından desteklenecektir: {{ shopify }}"
     },
     "breadcrumbs": {
@@ -182,8 +173,8 @@
       "view_details": "Ayrıntıları görüntüle",
       "address_error": "Bu adres aranırken hata oluştu",
       "address_no_results": "Bu adres için sonuç yok",
-      "address_query_limit_html": "Google API kullanım sınırını aştınız. <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium Plana</a> yükseltmeyi düşünün.",
-      "auth_error_html": "Google Haritalar hesabınızın kimliği doğrulanırken bir sorun oluştu. Uygulamanızın <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> ve <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> izinlerini oluşturun ve etkinleştirin."
+      "address_query_limit_html": "Google API kullanım sınırını aştınız. <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Premium Plana<\/a> yükseltmeyi düşünün.",
+      "auth_error_html": "Google Haritalar hesabınızın kimliği doğrulanırken bir sorun oluştu. Uygulamanızın <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> ve <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a> izinlerini oluşturun ve etkinleştirin."
     },
     "slideshow": {
       "play_slideshow": "Slayt gösterisini oynat",
@@ -198,7 +189,7 @@
     "quick_order_list": {
       "product_total": "Ürün alt toplamı",
       "view_cart": "Sepeti görüntüle",
-      "each": "{{ money }}/adet",
+      "each": "{{ money }}\/adet",
       "product": "Ürün",
       "variant": "Varyasyon",
       "variant_total": "Varyasyon toplamı",
@@ -251,9 +242,9 @@
       "subtotal": "ara toplam",
       "cart_error": "Sepetiniz güncellenirken bir hata oluştu. Lütfen tekrar deneyin.",
       "cart_quantity_error_html": "Bu üründen yalnızca {{ quantity }} tanesini sepetinize ekleyebilirsiniz.",
-      "taxes_and_shipping_policy_at_checkout_html": "Ödeme sırasında hesaplanan vergiler ve <a href=\"{{ link }}\">gönderim bedeli</a>",
+      "taxes_and_shipping_policy_at_checkout_html": "Ödeme sırasında hesaplanan vergiler ve <a href=\"{{ link }}\">gönderim bedeli<\/a>",
       "taxes_included_but_shipping_at_checkout": "Vergi dahildir ve gönderim bedeli ödeme sırasında hesaplanır",
-      "taxes_included_and_shipping_policy_html": "Vergi dahil. <a href=\"{{ link }}\">Ödeme</a> sırasında kargo bedeli hesaplanır.",
+      "taxes_included_and_shipping_policy_html": "Vergi dahil. <a href=\"{{ link }}\">Ödeme<\/a> sırasında kargo bedeli hesaplanır.",
       "taxes_and_shipping_at_checkout": "Vergiler dahildir ve gönderim bedeli ödeme sırasında hesaplanır.",
       "update": "Sepeti Güncelle",
       "checkout": "Ödeme ekranı",
@@ -310,10 +301,10 @@
     }
   },
   "localization": {
-    "country_label": "Ülke/bölge",
+    "country_label": "Ülke\/bölge",
     "language_label": "Dil",
     "update_language": "Dili güncelle",
-    "update_country": "Ülkeyi/bölgeyi güncelle"
+    "update_country": "Ülkeyi\/bölgeyi güncelle"
   },
   "contact": {
     "form": {
@@ -352,9 +343,9 @@
       "address1": "Adres 1",
       "address2": "Adres 2",
       "city": "Şehir",
-      "country": "Ülke/bölge",
+      "country": "Ülke\/bölge",
       "province": "Vilayet",
-      "zip": "Posta/Posta kodu",
+      "zip": "Posta\/Posta kodu",
       "phone": "Telefon",
       "set_default": "Varsayılan adres olarak ayarla",
       "add": "Adres Ekle",
@@ -467,7 +458,7 @@
       "shop_the_look": "Görünümü Satın Al",
       "vendor": "Satıcı",
       "include_taxes": "Vergi dahil.",
-      "shipping_policy_html": "Ödeme sırasında <a href='{{ link }}'>kargo bedeli</a> hesaplanır.",
+      "shipping_policy_html": "Ödeme sırasında <a href='{{ link }}'>kargo bedeli<\/a> hesaplanır.",
       "will_not_ship_until": "Gönderime hazır {{ date }}",
       "will_be_in_stock_after": "Tekrar stokta {{ date }}",
       "waiting_for_stock": "Envanter yolda",
@@ -481,7 +472,7 @@
       "regular_price": "Normal fiyat",
       "sale_price": "Satış ücreti",
       "unit_price": "Birim fiyat",
-      "from_price_html": "<small>İtibaren</small> {{ price }}"
+      "from_price_html": "<small>İtibaren<\/small> {{ price }}"
     },
     "media": {
       "open_media": "Medya {{ index }}'yi modaldan aç",
@@ -506,7 +497,7 @@
       "title": "Toplu Alım Bazlı Fiyatlandırma",
       "note": "Toplu alım bazlı fiyatlandırma kullanılabilir",
       "minimum": "{{ quantity }}+",
-      "price_at_each": "{{ price }}/adet",
+      "price_at_each": "{{ price }}\/adet",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {
@@ -528,9 +519,9 @@
       "view_store_info": "Mağaza bilgilerini görüntüle",
       "check_other_stores": "Diğer mağazalardaki stok durumunu kontrol edin",
       "pick_up_available": "Teslim alma mevcut",
-      "pick_up_available_at_html": "Teslim alma şu adreste mevcuttur: <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_available_at_html": "Teslim alma şu adreste mevcuttur: <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "pick_up_unavailable": "Teslim alma şu anda kullanılamıyor",
-      "pick_up_unavailable_at_html": "Teslim alma şu anda mevcut değil <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_unavailable_at_html": "Teslim alma şu anda mevcut değil <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "unavailable": "Teslim alma durumu yüklenemedi",
       "refresh": "Yenile"
     },

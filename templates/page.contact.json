@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -101,28 +92,28 @@
           "type": "contact",
           "settings": {
             "heading": "Address",
-            "text": "<p>Swansea.com Stadium<br/>Swansea<br/>SA1 2FA</p>"
+            "text": "<p>Swansea.com Stadium<br\/>Swansea<br\/>SA1 2FA<\/p>"
           }
         },
         "contact-2": {
           "type": "contact",
           "settings": {
             "heading": "Email",
-            "text": "<p>shop@swanseacity.com</p>"
+            "text": "<p>shop@swanseacity.com<\/p>"
           }
         },
         "contact-3": {
           "type": "contact",
           "settings": {
             "heading": "Phone",
-            "text": "<p>01792 823563<a href=\"#\" title=\"tel:+33 (0) 31-305-210\"><br/></a></p>"
+            "text": "<p>01792 823563<a href=\"#\" title=\"tel:+33 (0) 31-305-210\"><br\/><\/a><\/p>"
           }
         },
         "contact_WzKtab": {
           "type": "contact",
           "settings": {
             "heading": "Opening Times",
-            "text": "<p>Mon - Fri 10:00 - 17:00<br/>Sat Matchday - 10:00 - 17:30<br/>Sat Non Matchday - 10:00 - 14:00<a href=\"#\" title=\"tel:+33 (0) 31-305-210\"><br/></a>Midweek Matchday - 10:00 - Kick Off</p>"
+            "text": "<p>Mon - Fri 10:00 - 17:00<br\/>Sat Matchday - 10:00 - 17:30<br\/>Sat Non Matchday - 10:00 - 14:00<a href=\"#\" title=\"tel:+33 (0) 31-305-210\"><br\/><\/a>Midweek Matchday - 10:00 - Kick Off<\/p>"
           }
         },
         "media": {

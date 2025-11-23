@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "404": {
@@ -54,7 +45,7 @@
       "login_form_password": "密碼",
       "login_form_error": "密碼錯誤！",
       "login_form_submit": "進入",
-      "admin_link_html": "您是店主嗎？<a href=\"/admin\" class=\"link\">在此登入</a>",
+      "admin_link_html": "您是店主嗎？<a href=\"\/admin\" class=\"link\">在此登入<\/a>",
       "powered_by_shopify_html": "本商店由 {{ shopify }} 提供技術支援"
     },
     "breadcrumbs": {
@@ -182,8 +173,8 @@
       "view_details": "看詳情",
       "address_error": "尋找該位址時發生錯誤",
       "address_no_results": "該地址沒有結果",
-      "address_query_limit_html": "您已超出 Google API 使用限制。考慮升級到<a href=\"https://developers.google.com/maps/premium/usage-limits\">高級計劃</a>。",
-      "auth_error_html": "驗證您的 Google 地圖帳戶時出現問題。建立並啟用應用程式的<a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a>和<a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">地理編碼 API</a>權限。"
+      "address_query_limit_html": "您已超出 Google API 使用限制。考慮升級到<a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">高級計劃<\/a>。",
+      "auth_error_html": "驗證您的 Google 地圖帳戶時出現問題。建立並啟用應用程式的<a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a>和<a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">地理編碼 API<\/a>權限。"
     },
     "slideshow": {
       "play_slideshow": "播放幻燈片",
@@ -198,7 +189,7 @@
     "quick_order_list": {
       "product_total": "產品小計",
       "view_cart": "查看購物車",
-      "each": "{{ money }} /ea",
+      "each": "{{ money }} \/ea",
       "product": "產品",
       "variant": "變體",
       "variant_total": "變體總數",
@@ -251,9 +242,9 @@
       "subtotal": "小計",
       "cart_error": "更新購物車時發生錯誤。請再試一次。",
       "cart_quantity_error_html": "您只能將 {{ quantity }} 項商品加入您的購物車。",
-      "taxes_and_shipping_policy_at_checkout_html": "稅金與<a href=\"{{ link }}\">運費</a>將於結帳時計算",
+      "taxes_and_shipping_policy_at_checkout_html": "稅金與<a href=\"{{ link }}\">運費<\/a>將於結帳時計算",
       "taxes_included_but_shipping_at_checkout": "含稅；運費將於結帳時計算",
-      "taxes_included_and_shipping_policy_html": "含稅；<a href=\"{{ link }}\">運費</a>將於結帳時計算。",
+      "taxes_included_and_shipping_policy_html": "含稅；<a href=\"{{ link }}\">運費<\/a>將於結帳時計算。",
       "taxes_and_shipping_at_checkout": "含稅；運費將於結帳時計算",
       "update": "更新購物車",
       "checkout": "前往結帳",
@@ -310,10 +301,10 @@
     }
   },
   "localization": {
-    "country_label": "國家/地區",
+    "country_label": "國家\/地區",
     "language_label": "語言",
     "update_language": "更新語言",
-    "update_country": "更新國家/地區"
+    "update_country": "更新國家\/地區"
   },
   "contact": {
     "form": {
@@ -352,7 +343,7 @@
       "address1": "地址1",
       "address2": "地址2",
       "city": "城市",
-      "country": "國家/地區",
+      "country": "國家\/地區",
       "province": "省",
       "zip": "郵遞區號",
       "phone": "電話",
@@ -467,7 +458,7 @@
       "shop_the_look": "選購造型",
       "vendor": "小販",
       "include_taxes": "含稅。",
-      "shipping_policy_html": "<a href=\"&lt;span%20class=\" notranslate>{{ link }} '&gt;結帳時計算運費</a>。",
+      "shipping_policy_html": "<a href=\"&lt;span%20class=\" notranslate>{{ link }} '&gt;結帳時計算運費<\/a>。",
       "will_not_ship_until": "準備出貨{{ date }}",
       "will_be_in_stock_after": "又有貨了{{ date }}",
       "waiting_for_stock": "庫存在路上",
@@ -481,7 +472,7 @@
       "regular_price": "正常價格",
       "sale_price": "銷售價格",
       "unit_price": "單價",
-      "from_price_html": "<small>從</small>{{ price }}起"
+      "from_price_html": "<small>從<\/small>{{ price }}起"
     },
     "media": {
       "open_media": "在模式中開啟媒體{{ index }}",
@@ -506,7 +497,7 @@
       "title": "批量定價",
       "note": "提供批量定價",
       "minimum": "{{ quantity }} +",
-      "price_at_each": "價格為{{ price }} /ea",
+      "price_at_each": "價格為{{ price }} \/ea",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {
@@ -528,9 +519,9 @@
       "view_store_info": "查看店面資訊",
       "check_other_stores": "檢查其他商店的庫存狀況",
       "pick_up_available": "有存貨",
-      "pick_up_available_at_html": "可以在<span class=\"color-foreground\">{{ location_name }}</span>取貨",
+      "pick_up_available_at_html": "可以在<span class=\"color-foreground\">{{ location_name }}<\/span>取貨",
       "pick_up_unavailable": "目前無法取貨",
-      "pick_up_unavailable_at_html": "目前無法在<span class=\"color-foreground\">{{ location_name }}</span>取貨",
+      "pick_up_unavailable_at_html": "目前無法在<span class=\"color-foreground\">{{ location_name }}<\/span>取貨",
       "unavailable": "無法載入取貨情況",
       "refresh": "重新整理"
     },

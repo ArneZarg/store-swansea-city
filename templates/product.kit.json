@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main-product": {
@@ -38,7 +29,7 @@
             "picker_type": "button",
             "enable_color_swatches": true,
             "color_swatch_type": "color",
-            "size_chart": "shopify://shop_images/Swansea_Joma_Size_Chart.png"
+            "size_chart": "shopify:\/\/shop_images\/Swansea_Joma_Size_Chart.png"
           }
         },
         "inventory": {
@@ -195,7 +186,7 @@
           "settings": {
             "icon": "rocket",
             "heading": "Shipping Information",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle",
             "color_text": "#b45309",
@@ -210,7 +201,7 @@
           "settings": {
             "icon": "headphone",
             "heading": "Customer Support",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle",
             "color_text": "#0369a1",
@@ -225,7 +216,7 @@
           "settings": {
             "icon": "chat_bubble",
             "heading": "FAQ’s",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle",
             "color_text": "#be123c",
@@ -240,7 +231,7 @@
           "settings": {
             "icon": "phone",
             "heading": "Contact Us",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle",
             "color_text": "#4d7c0f",
@@ -259,7 +250,7 @@
       ],
       "settings": {
         "heading": "Need help?",
-        "description": "<p>If you have any questions, you are always welcome to contact us. We'll get back to you as soon as possible, within 24 hours on weekdays.</p>"
+        "description": "<p>If you have any questions, you are always welcome to contact us. We'll get back to you as soon as possible, within 24 hours on weekdays.<\/p>"
       }
     },
     "video-hero": {
@@ -315,7 +306,7 @@
       "disabled": true,
       "settings": {
         "transparent_header": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
         "enable_video_autoplay": true,
         "enable_video_looping": true,
@@ -339,7 +330,7 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "subheading": "<em>Tagline</em>",
+            "subheading": "<em>Tagline<\/em>",
             "heading": "Example heading",
             "link": "",
             "invert_subheading_heading": false,
@@ -361,7 +352,7 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "subheading": "<em>Tagline</em>",
+            "subheading": "<em>Tagline<\/em>",
             "heading": "Example heading",
             "link": "",
             "invert_subheading_heading": false,
@@ -383,7 +374,7 @@
         "image-3": {
           "type": "image",
           "settings": {
-            "subheading": "<em>Tagline</em>",
+            "subheading": "<em>Tagline<\/em>",
             "heading": "Example heading",
             "link": "",
             "invert_subheading_heading": false,
@@ -405,7 +396,7 @@
         "image-4": {
           "type": "image",
           "settings": {
-            "subheading": "<em>Tagline</em>",
+            "subheading": "<em>Tagline<\/em>",
             "heading": "Example heading",
             "link": "",
             "invert_subheading_heading": true,
@@ -438,7 +429,7 @@
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
         "subheading": "",
-        "description": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+        "description": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
         "button_label": "View more",
         "button_link": "",
         "button_external": false,
@@ -485,7 +476,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
             "text_size": "subtext-md",
             "text_max_size": 32,
             "text_font": "body",
@@ -534,7 +525,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<em><strong>Free shipping and returns</strong></em>",
+            "text": "<em><strong>Free shipping and returns<\/strong><\/em>",
             "text_size": 160,
             "text_font": "body",
             "highlighted_text": "stencil",
@@ -587,7 +578,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
             "text_size": "subtext-md",
             "text_max_size": 32,
             "text_font": "body",
@@ -639,7 +630,7 @@
             "icon": "none",
             "icon_width": 24,
             "heading": "Collapsible row 1",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
             "metafields": ""
           }
         },
@@ -649,7 +640,7 @@
             "icon": "none",
             "icon_width": 24,
             "heading": "Collapsible row 2",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
             "metafields": ""
           }
         },
@@ -659,7 +650,7 @@
             "icon": "none",
             "icon_width": 24,
             "heading": "Collapsible row 3",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
             "metafields": ""
           }
         },
@@ -669,7 +660,7 @@
             "icon": "none",
             "icon_width": 24,
             "heading": "Collapsible row 4",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
             "metafields": ""
           }
         }
@@ -719,7 +710,7 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -728,7 +719,7 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -737,7 +728,7 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -746,7 +737,7 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -755,7 +746,7 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -764,7 +755,7 @@
           "type": "contact",
           "settings": {
             "heading": "Didn’t find your answer?",
-            "text": "<p>Don't hestitate to contact us</p>",
+            "text": "<p>Don't hestitate to contact us<\/p>",
             "show_phone": false,
             "avatar_height": 60,
             "highlighted_text": "none",
@@ -788,7 +779,7 @@
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
         "subheading": "",
-        "description": "<p>Please read our <a href=\"#\" title=\"FAQ's\">FAQs</a> page to find out more.</p>",
+        "description": "<p>Please read our <a href=\"#\" title=\"FAQ's\">FAQs<\/a> page to find out more.<\/p>",
         "button_label": "",
         "button_link": "",
         "button_external": false,
