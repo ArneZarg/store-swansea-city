@@ -1,0 +1,211 @@
+{{ 'kit-builder.css' | asset_url | stylesheet_tag }}
+
+<div class="kit_builder__container" {{ block.shopify_attributes }}>
+    <h3 style="margin-bottom: 5px;letter-spacing: 0.01em;">Personalise</h3>
+    <p style="margin-bottom: 20px" class="mb-10 text-sm leading-tight">{{ block.settings.kit_builder_description | default: 'Add your own name and number or choose a players' }}</p>
+    <div class="kit_builder__buttons">
+        {% assign personalised_price = product.metafields.kit_builder.personalisation_price.value %}
+        <button
+            class="kit_builder__button button button--secondary active"  
+            onclick="setDefaultProductPrice();customPrinting(this,'none');"  
+        >
+            <span class="btn-text">None</span>
+        </button>
+        {% if product.metafields.kit_builder.players.value != blank %} 
+        <button
+            id="player_button" 
+            class="kit_builder__button button button--secondary" 
+            onclick="setDefaultProductPrice();customPrinting(this,'player', '{{ shop.money_format | first }}')" 
+        >
+            <span class="btn-text">Player +{{ personalised_price | money_without_trailing_zeros }}</span>
+        </button>
+        {% endif %}
+        <button 
+            id="custom_button" 
+            class="kit_builder__button button button--secondary" 
+            onclick="setDefaultProductPrice();customPrinting(this,'custom', '{{ shop.money_format | first }}')" 
+        >
+            <span class="btn-text">Custom +{{ personalised_price | money_without_trailing_zeros }}</span>
+        </button>
+        {% comment %} Add cost to Personalised but not _personalisedType {% endcomment %}
+        <input hidden name="properties[Personalised]" value="None" form="{{ product_form_id }}">
+        <input hidden name="properties[_personalisedType]" value="None" form="{{ product_form_id }}">
+        <input hidden id="customPrinting" data-product-id="{{ product.metafields.kit_builder.shirt_personalised.value.id }}" >
+        <input hidden name="properties[_personalisePrice]" value="{{ personalised_price | money_without_currency }}" form="{{ product_form_id }}">
+        <input hidden name="properties[Badge]" value="None" form="{{ product_form_id }}">
+        <input hidden name="properties[_badgePrice]" value="0" form="{{ product_form_id }}">
+    </div>
+    <div class="kit_builder__custom" style="display:none;">
+        <div 
+            id="Slide-{{ section.id }}-back{{ id_append }}"
+            data-media-id="{{ section.id }}-back"
+            style="margin-bottom: 10px;"
+        >
+            <div id="preview-container-custom" class="preview-container">
+                <img id="preview-img" width="100%" height="100%" src="{{ product.metafields.kit_builder.back_shirt_image | image_url: width:600 }}"/>
+                {% for extra in product.metafields.kit_builder.extras.value %}
+                    <div class="shirt-container">
+                        <img src="{{ extra.shirt_image.value | image_url: 'master' }}" class="shirt_back_image extra-{{ extra.product.value.id }}" width="auto" height="auto" />
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div
+            id="Custom-Form-{{ section.id }}"
+            class="product-form__input"
+        >
+            <label class="form__label" for="Custom-{{ section.id }}">
+                Name
+            </label>
+            <input 
+                name="properties[Name]" 
+                type="text"
+                form="{{ product_form_id }}" 
+                class="input search__input"
+                placeholder="Enter Name (Max {{ product.metafields.kit_builder.character_limit }} Characters)"
+                oninput="this.value = this.value.toUpperCase()"
+                maxlength="{{ product.metafields.kit_builder.character_limit | default: 14 }}"
+            >
+            <div class="kit_builder__error-message" id="name-error">
+                {%- render 'icon', icon: 'alert-triangle', size: 'sm', class: 'shrink-0' -%}
+                <span class="error-text"></span>
+            </div>
+        </div>
+        <div
+            id="Custom-Form-{{ section.id }}"
+            class="product-form__input"
+        >
+            <label class="form__label" for="Custom-{{ section.id }}">
+                Number
+            </label>
+            <input 
+                name="properties[Number]" 
+                type="number" 
+                min="0" 
+                max="99" 
+                maxlength="2"
+                form="{{ product_form_id }}" 
+                class="input search__input"
+                placeholder="Enter Number (Max 2 Characters)"
+            >
+            <div class="kit_builder__error-message" id="number-error">
+                {%- render 'icon', icon: 'alert-triangle', size: 'sm', class: 'shrink-0' -%}
+                <span class="error-text"></span>
+            </div>
+        </div>
+
+        {%  if product.metafields.kit_builder.badges.value != blank %}
+            {%- capture kit_badges_id -%}
+                {%- increment kit_badges_id -%}
+            {%- endcapture -%}
+            {%- render 'kit-badges',
+                unique_id: kit_badges_id
+            -%}
+        {% endif %}
+
+        {%- render 'kit-builder-disclaimer',
+            block: block
+        -%}
+    </div>
+    {% if product.metafields.kit_builder.players.value != blank %} 
+    <div class="kit_builder__player" style="display:none;">
+        <div 
+            data-media-id="{{ section.id }}-back"
+            style="margin-bottom: 10px;"
+        >
+            <div id="preview-container-player" class="preview-container">
+                <img id="preview-img" width="100%" height="100%"/>
+                {% for extra in product.metafields.kit_builder.extras.value %}
+                    <div class="shirt-container">
+                        <img src="{{ extra.shirt_image.value | image_url: 'master' }}" class="shirt_back_image extra-{{ extra.product.value.id }}" width="auto" height="auto" />
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div
+        id="Player-Form-{{ section.id }}"
+        class="product-form__input"
+        >
+            <div class="details select-sort-by" data-filter data-index="{{ context }}-sort-by">
+                <div class="field">
+                    <select id="playerSelect" is="custom-select" class="select is-floating" onchange="if (window.product?.template === 'kit') { generatePreviewImage(); } else if (window.product?.template === 'training') { generateTrainingPreviewImage(); }">
+                        {% for player in product.metafields.kit_builder.players.value.players.value %}
+                            <option data-product-id="{{ player.system.id }}" value="{{ player.system.id }}">
+                                {{ player.name }}{% if player.name_english != blank %} ({{ player.name_english }}){% endif %} - {{ player.number}}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {%- render 'icon', icon: 'chevron-up', size: 'sm', class: 'absolute' -%}
+                    <label class="label is-floating" for="FacetFormSortBy-{{ context }}">
+                        Select Player
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        {%  if product.metafields.kit_builder.badges.value != blank %}
+            {%- capture kit_badges_id -%}
+                {%- increment kit_badges_id -%}
+            {%- endcapture -%}        
+            {%- render 'kit-badges',
+                unique_id: kit_badges_id
+            -%}
+        {% endif %}
+
+        {%- render 'kit-builder-disclaimer',
+            block: block
+        -%}
+    </div>
+    {% endif %}
+    
+    <script>
+        window.product = { 
+            template: '{{ product.template_suffix }}',
+            {% if product.compare_at_price_varies %}
+            price: {{ product.compare_at_price | money_without_currency }},
+            {% else %}
+            price: {{ product.price | money_without_currency }},
+            {% endif %}
+            currency: '{{ shop.money_format | first }}',
+            kit_builder: { 
+                back_shirt_image: '{{ product.metafields.kit_builder.back_shirt_image | image_url: width:600 }}',
+                extras: [ 
+                {% for obj in product.metafields.kit_builder.extras.value %}
+                {%  if obj.live_preview.value == blank %}{% assign preview = true %}
+                {% else %}{% assign preview = obj.live_preview.value %}{% endif %}
+                    
+                { id: '{{ obj.product.value.id }}', name:'{{ obj.name.value }}', image:'{{ obj.shirt_image.value | image_url }}', icon: '{{ obj.icon.value | image_url }}', price: {{ obj.product.value.price }}, preview: {{preview}} },
+                {% endfor %}
+                ],    
+                {% if product.metafields.kit_builder.shirt_personalised.value != blank %}
+                shirt_printing:{
+                    id: {{ product.metafields.kit_builder.shirt_personalised.value.id }},
+                    price: {{ product.metafields.kit_builder.shirt_personalised.value.price }}
+                },
+                {% endif %}
+                character_limit: {% if product.metafields.kit_builder.character_limit != blank %} {{ product.metafields.kit_builder.character_limit }} {% else %} 12 {% endif %},
+                shirt_numbers : [
+                {% for obj in product.metafields.kit_builder.shirt_numbers.value.numbers.value %}
+                    { number:'{{ obj.number.value }}', image: '{{ obj.image.value | image_url }}' },
+                    {% comment %} { id: '{{ obj.product.value.id }}', sku:'{{ obj.product.value.sku }}', number:'{{ obj.number.value }}', image: '{{ obj.image.value | img_url: 'master'}}' }, {% endcomment %}
+                {% endfor %}
+                ],
+                shirt_letters : [
+                {% for obj in product.metafields.kit_builder.shirt_letters.value %}
+                    { id: '{{ obj.product.value.id }}', sku:'{{ obj.product.value.sku }}', letter:"{{ obj.letter.value }}" },
+                {% endfor %}  
+                ],
+                text_color: '{{ product.metafields.kit_builder.text_color.value }}',
+                players : [
+                {% for obj in product.metafields.kit_builder.players.value.players.value %}
+                    { id: '{{ obj.system.id }}', name:"{{ obj.name }}", number:'{{ obj.number }}' },
+                {% endfor %}  
+                ] ,
+                badge: {
+                    price: 0
+                }
+            },
+        }
+    </script>
+    <div class="sub-total-hide"></div>
+</div> 

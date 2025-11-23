@@ -1,0 +1,297 @@
+{%- comment -%}
+  Renders a newsletter form
+
+  Accepts:
+  - context: {String}
+  - section_id: {String} The ID of section to which this snippet belongs.
+  Usage:
+  {% render 'newsletter-form', section_id: section.id, context: 'section' %}
+{%- endcomment -%}
+
+{%- assign form_id = 'newsletter-' | append: section_id -%}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.min.css"/>
+
+<div class="newsletter-form grid gap-5" data-form-id="{{ form_id }}">
+  <!-- Step 1: Email Input -->
+  <div class="newsletter-step step-1" id="step-1-{{ form_id }}">
+    <div class="field relative" style="padding: 0 20px;">
+      <input
+        id="NewsletterForm--{{ section_id }}"
+        class="input email-input"
+        type="email"
+        style="background-color:#D9D9D9;border-radius:2px;"
+        placeholder="Email Address"
+        required
+        {%- if form.errors %} autofocus{% endif -%}
+      />
+      <div class="">
+        <button type="button" class="button self-button flex justify-center items-center custom-button email-submit-btn" data-magnet="20">
+          Next
+        </button>
+        <div style="text-align:center; margin-top:10px;">
+          <a href="#" class="no-thanks-link" style="text-decoration:underline; color:inherit; cursor:pointer;">No thanks, I’m fine missing out.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2: Phone Input -->
+  <div class="newsletter-step step-2 hidden" id="step-2-{{ form_id }}">
+    <div class="field relative" style="padding: 0 10px;">
+      <div>
+      <input
+        id="PhoneForm--{{ section_id }}"
+        class="input phone-input"
+        type="tel"
+        style="background-color:#D9D9D9;border-radius:2px;"
+        placeholder="Phone Number"
+        required
+      />
+      </div>
+      <div class="">
+        <button type="button" class="button self-button flex justify-center items-center custom-button phone-submit-btn" data-magnet="20">
+          Join the List
+        </button>
+        <div style="text-align:center; margin-top:10px; color:#D9D9D9;">
+          <a href="#" class="no-thanks-link" style="text-decoration:underline; color:inherit; cursor:pointer;">No thanks, I’m fine missing out.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Message -->
+  <div class="newsletter-step success-message hidden" id="success-{{ form_id }}">
+    <div class="alert alert--success flex items-start gap-3 text-sm md:text-base leading-tight">
+      Thanks for subscribing!
+    </div>
+  </div>
+
+  <!-- Hidden form for actual submission -->
+  {%- form 'customer', id: form_id, class: 'hidden-form' -%}
+    <input type="hidden" name="contact[tags]" id="hidden-tags-{{ form_id }}" value="home_launch" />
+    <input type="hidden" name="contact[email]" id="hidden-email-{{ form_id }}" />
+    <input type="hidden" name="contact[context]" value="{{ context }}" />
+  {%- endform -%}
+
+  <style>
+    .custom-button{
+    width: 100%;
+    padding-top: 20px;
+    background-color: #AE6A4C;
+    margin-top: 15px;
+    font-size: 16.5px;
+    border-radius: 5px;
+    color: #D9D9D9;
+    text-transform: capitalize;
+    font-family: var(--font-body-family);
+    }
+    .custom-button::after{
+      border:unset;
+    }
+    .email-input::placeholder,
+    .phone-input::placeholder {
+      color: #0D0D0D;
+    }
+    .phone-input, .iti {
+      width:100%;
+      color:black; 
+    }
+    .newsletter-step.hidden {
+      display: none !important;
+    }
+    .newsletter-step.step-2 {
+      animation: fadeIn 0.3s ease-in;
+    }
+    .newsletter-step.success-message {
+      animation: fadeIn 0.3s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hidden-form {
+      display: none !important;
+    }
+  </style>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const formContainer = document.querySelector('[data-form-id="{{ form_id }}"]');
+  if (!formContainer) return;
+
+  const emailInput = formContainer.querySelector('.email-input');
+  const phoneInput = formContainer.querySelector('.phone-input');
+  const emailSubmitBtn = formContainer.querySelector('.email-submit-btn');
+  const phoneSubmitBtn = formContainer.querySelector('.phone-submit-btn');
+  const step1 = formContainer.querySelector('.step-1');
+  const step2 = formContainer.querySelector('.step-2');
+  const successMessage = formContainer.querySelector('.success-message');
+  const hiddenForm = formContainer.querySelector('.hidden-form');
+  const hiddenEmail = formContainer.querySelector('#hidden-email-{{ form_id }}');
+  const hiddenTags = formContainer.querySelector('#hidden-tags-{{ form_id }}');
+
+  let userEmail = '';
+  let emailSubmitted = false;
+  let phoneSubmitted = false;
+
+  // Add error message element for phone validation
+  let phoneErrorMsg = document.createElement('div');
+  phoneErrorMsg.className = 'phone-error-msg';
+  phoneErrorMsg.style.color = 'red';
+  phoneErrorMsg.style.fontSize = '0.9em';
+  phoneErrorMsg.style.marginTop = '5px';
+  phoneInput.parentNode.appendChild(phoneErrorMsg);
+
+  // Email submit handler
+  emailSubmitBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    
+    if (!email || !isValidEmail(email)) {
+      console.log('Invalid email provided');
+      return;
+    }
+    
+    userEmail = email;
+    emailSubmitted = true;
+    
+    // Change the text above phone input with smooth transition
+    var rte = formContainer.closest('.newsletter-modal')?.querySelector('.rte');
+    if (rte) {
+      rte.style.transition = 'opacity 0.3s';
+      rte.style.opacity = '0';
+      setTimeout(function() {
+        rte.textContent = "Don’t miss anything, get updates directly on your phone!";
+        rte.style.opacity = '1';
+      }, 300);
+    }
+    
+    // Show loading state
+    emailSubmitBtn.innerHTML = 'Submitting...';
+    emailSubmitBtn.disabled = true;
+    
+    // Simulate processing and show step 2
+    setTimeout(() => {
+      step1.classList.add('hidden');
+      step2.classList.remove('hidden');
+      phoneInput.focus();
+      
+      // Reset button
+      emailSubmitBtn.innerHTML = 'Submit Email';
+      emailSubmitBtn.disabled = false;
+    }, 1000);
+  });
+
+  // Initialize intl-tel-input for all devices
+  if (window.intlTelInput) {
+    window.intlTelInput(phoneInput, {
+      initialCountry: 'gb',
+      utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js'
+    });
+  }
+
+  // Phone submit handler
+  phoneSubmitBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    let phone = phoneInput.value.trim();
+    let isValid = true;
+    let iti = null;
+    // Use intl-tel-input formatted number and validation if available
+    if (window.intlTelInputGlobals && window.intlTelInputGlobals.getInstance) {
+      iti = window.intlTelInputGlobals.getInstance(phoneInput);
+      if (iti) {
+        phone = iti.getNumber();
+        isValid = iti.isValidNumber();
+      }
+    }
+    if (!phone || !isValid) {
+      phoneErrorMsg.textContent = 'Please enter a valid phone number.';
+      return;
+    } else {
+      phoneErrorMsg.textContent = '';
+    }
+    
+    // Show loading state
+    phoneSubmitBtn.innerHTML = 'Submitting...';
+    phoneSubmitBtn.disabled = true;
+    
+    // Set hidden form values
+    hiddenEmail.value = userEmail;
+    // Append phone to tags in the format [[phone:thenumber]]
+    if (hiddenTags.value) {
+      hiddenTags.value += ',[[phone:' + phone + ']]';
+    } else {
+      hiddenTags.value = '[[phone:' + phone + ']]';
+    }
+    phoneSubmitted = true;
+    
+    // Set cookie before submitting the form
+    const newsletterModal = formContainer.closest('newsletter-modal');
+    if (newsletterModal && newsletterModal.setCookieNow) {
+      newsletterModal.setCookieNow();
+    }
+    
+    // Submit the hidden form
+    setTimeout(() => {
+      hiddenForm.submit();
+    }, 1000);
+  });
+
+  // Enter key handlers
+  emailInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      emailSubmitBtn.click();
+    }
+  });
+
+  phoneInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      phoneSubmitBtn.click();
+    }
+  });
+
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  // Handle abandonment after email step
+  function submitEmailOnlyIfNeeded() {
+    if (emailSubmitted && !phoneSubmitted) {
+      hiddenEmail.value = userEmail;
+      
+      // Set cookie before submitting the form
+      const newsletterModal = formContainer.closest('newsletter-modal');
+      if (newsletterModal && newsletterModal.setCookieNow) {
+        newsletterModal.setCookieNow();
+      }
+      
+      hiddenForm.submit();
+      emailSubmitted = false; // Prevent double submit
+    }
+  }
+
+  // Listen for modal close event
+  const newsletterModal = formContainer.closest('newsletter-modal');
+  if (newsletterModal) {
+    newsletterModal.addEventListener('modal:afterHide', function() {
+      submitEmailOnlyIfNeeded();
+    });
+  }
+
+  // Add event listener to close modal on 'No thanks' click (works for both email and phone steps)
+  const noThanksLinks = formContainer.querySelectorAll('.no-thanks-link');
+  if (newsletterModal) {
+    noThanksLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        newsletterModal.hide();
+      });
+    });
+  }
+});
+</script>

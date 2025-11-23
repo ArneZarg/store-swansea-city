@@ -1,0 +1,222 @@
+<style>
+  .collection-list__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+    width: 100%;
+    max-width: 475px;
+    min-width: 230px;
+    gap: 10px;
+  }
+
+  .collection-list__item picture {
+    display: block;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    flex-shrink: 1;
+    max-width: 50%;
+    min-width: 70px;
+    max-height: 250px;
+  }
+
+  .collection-list__item picture img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .collection-link {
+    display: flex;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .collection-link__content {
+    color: #0D0C07;
+  }
+
+  .collection-link #top-text {
+    font-size: clamp(12px, 3vw, 14px);
+    font-weight: 400;
+    font-family: 'BioSans';
+    line-height: 1;
+  }
+
+  .collection-link #middle-text {
+    font-size: clamp(45px, 10vw, 55px);
+    font-weight: 700;
+    line-height: 1.1;
+    font-family: 'GT-America-Compressed-Bold';
+  }
+
+  .collection-link #bottom-text {
+    font-size: clamp(17px, 3vw, 19px);
+    font-weight: 400;
+    font-family: 'BioSans';
+    line-height: 1;
+  }
+
+  .link-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 400px)  {
+    .link-icon {
+      right: 5px;
+      top: 5px;
+    }
+  }
+
+  @media screen and (max-width: 500px)  {
+    .collection-list__item {
+      padding: 10px 5px 10px 5px;
+    }
+
+    .collection-list__item picture {
+      max-width: 40%;
+    }
+  }
+</style>
+
+{%- for block in section.blocks -%}
+  {%- capture block_content -%}
+    {%- if block.settings.top_text != blank or block.settings.middle_text != blank or block.settings.bottom_text != blank -%}
+      {% comment %} <a class="collection-link {{ block.settings.content_position }} {{ block.settings.content_position_mobile }}"{% if block.settings.link != blank %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %}> {% endcomment %}
+      <div class="collection-link">
+        <div class="collection-link__content">
+            {%- if block.settings.top_text != blank -%}
+              <p id="top-text">
+                {{ block.settings.top_text }}
+              </p>
+            {%- endif -%}
+
+            {%- if block.settings.middle_text != blank -%}
+              <p id="middle-text">
+                <span>
+                  {{ block.settings.middle_text }}
+                </span>
+              </p>
+            {%- endif -%}
+
+            {%- if block.settings.bottom_text != blank -%}
+              <p id="bottom-text">
+                {{ block.settings.bottom_text }}
+              </p>
+            {%- endif -%}
+          </div>
+          <div class="link-icon">
+            {%- render 'icon', icon: 'arrow-right', size: 'lg' -%}
+          </div>
+      </div>
+    {%- endif -%}
+  {%- endcapture -%}
+  
+  {%- case block.type -%}
+    {%- when 'image' -%}
+      <a class="collection-list__item" id="shopify-block-{{ block.id }}" {% if block.settings.link != blank %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} {{ block.shopify_attributes }}>
+        {%- if block.settings.image_mobile != blank -%}
+          {%- assign sizes = '(max-width: 767px) 100vw, 50vw' -%}
+          <picture>
+            {%- if block.settings.image_mobile -%}
+              <source
+                media="(max-width: 767px)"
+                srcset="{{ block.settings.image_mobile | image_url: width: '400x' }} 400w, {{ block.settings.image_mobile | image_url: width: '600x' }} 600w, {{ block.settings.image_mobile | image_url: width: '800x' }} 800w, {{ block.settings.image_mobile | image_url: width: '1000x' }} 1000w"
+                width="{{ block.settings.image_mobile.width }}"
+                height="{{ block.settings.image_mobile.height }}"
+              >
+            {%- endif -%}
+
+            {{- block.settings.image_mobile | image_url: width: block.settings.image_mobile.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600', is: 'lazy-image' -}}
+          </picture>
+          {% comment %} {%- if block.settings.image_hover != blank -%}
+            <picture class="media media--height block w-full h-full absolute top-0 left-0 opacity-0 pointer-events-none overflow-hidden" style="object-fit: contain;">
+              {{- block.settings.image_hover | image_url: width: block.settings.image_hover.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600', is: 'lazy-image', style: 'max-height: 100%; width: auto; object-fit: contain;' -}}
+            </picture>
+          {%- endif -%} {% endcomment %}
+        {%- else -%}
+          <div class="media media--height w-full h-full relative overflow-hidden">
+            {%- capture placeholder -%}{% cycle 'collection-1', 'collection-2', 'collection-3', 'collection-4', 'collection-5', 'collection-6' %}{%- endcapture -%}
+            {{- placeholder | placeholder_svg_tag: 'placeholder' -}}
+          </div>
+        {%- endif -%}
+
+        {{- block_content -}}
+      </a>
+      {% comment %} <div class="collage__item with-image banner w-full h-full relative overflow-hidden" style="--collage-column: {{ block.settings.column_size }}; --collage-row: {{ block.settings.row_size }}" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          {%- assign sizes = '(max-width: 767px) 100vw, 50vw' -%}
+          <picture class="media media--height block w-full h-full relative overflow-hidden">
+            {%- if block.settings.image_mobile -%}
+              <source
+                media="(max-width: 767px)"
+                srcset="{{ block.settings.image_mobile | image_url: width: '400x' }} 400w, {{ block.settings.image_mobile | image_url: width: '600x' }} 600w, {{ block.settings.image_mobile | image_url: width: '800x' }} 800w, {{ block.settings.image_mobile | image_url: width: '1000x' }} 1000w"
+                width="{{ block.settings.image_mobile.width }}"
+                height="{{ block.settings.image_mobile.height }}"
+              >
+            {%- endif -%}
+
+            {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600', is: 'lazy-image' -}}
+          </picture>
+          {%- if block.settings.image_hover != blank -%}
+            <picture class="media media--height block w-full h-full absolute top-0 left-0 opacity-0 pointer-events-none overflow-hidden">
+              {{- block.settings.image_hover | image_url: width: block.settings.image_hover.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600', is: 'lazy-image' -}}
+            </picture>
+          {%- endif -%}
+        {%- else -%}
+          <div class="media media--height w-full h-full relative overflow-hidden">
+            {%- capture placeholder -%}{% cycle 'collection-1', 'collection-2', 'collection-3', 'collection-4', 'collection-5', 'collection-6' %}{%- endcapture -%}
+            {{- placeholder | placeholder_svg_tag: 'placeholder' -}}
+          </div>
+        {%- endif -%}
+
+        {{- block_content -}}
+      </div> {% endcomment %}
+
+    {%- when 'video' -%}
+      <div class="collage__item with-image banner w-full h-full relative overflow-hidden" style="--collage-column: {{ block.settings.column_size | default: 10 }}; --collage-row: {{ block.settings.row_size | default: 4 }}" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
+        <div class="w-full h-full relative">
+          {%- if block.settings.video_mobile or block.settings.video_url_mobile -%}
+            {%- render 'video',
+              video: block.settings.video_mobile,
+              video_url: block.settings.video_url_mobile,
+              muted: block.settings.enable_video_autoplay,
+              autoplay: block.settings.enable_video_autoplay,
+              loop: block.settings.enable_video_looping,
+              description: block.settings.description,
+              cover_image: block.settings.cover_image_mobile,
+              show_play_button: true,
+              is_mobile: true,
+              class: 'media media--height w-full h-full'
+            -%}
+          {%- endif -%}
+    
+          {%- render 'video',
+            video: block.settings.video,
+            video_url: block.settings.video_url,
+            muted: block.settings.enable_video_autoplay,
+            autoplay: block.settings.enable_video_autoplay,
+            loop: block.settings.enable_video_looping,
+            description: block.settings.description,
+            cover_image: block.settings.cover_image,
+            show_play_button: true,
+            class: 'media media--height w-full h-full'
+          -%}
+          
+          {{- block_content -}}
+        </div>
+      </div>
+
+  {%- endcase -%}
+{%- endfor -%}

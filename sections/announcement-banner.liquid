@@ -1,0 +1,47 @@
+{{ 'swansea.css' | asset_url | stylesheet_tag }}
+
+<div class="announcement-banner">
+    <div class="announcement-banner__content">
+        <div class="announcement-banner__title">
+            {{ section.settings.title }}
+        </div>
+        {% if section.settings.show_subheading %}
+            <div class="announcement-banner__separator"></div>
+            <div class="announcement-banner__subheading">
+                {{ section.settings.subheading }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.announcement-banner.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_subheading",
+      "default": true,
+      "label": "t:sections.announcement-banner.settings.show_subheading.label"
+    },
+    {
+    "type": "richtext",
+    "id": "title",
+    "label": "t:sections.announcement-banner.blocks.announcement.settings.title.label"
+    },
+    {
+    "type": "richtext",
+    "id": "subheading",
+    "label": "t:sections.announcement-banner.blocks.announcement.settings.subheading.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.announcement-banner.presets.name"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["*"],
+  }
+}
+{% endschema %}

@@ -1,0 +1,94 @@
+{%- comment -%}
+  Renders product kit-badges.
+  Accepts:
+  - unique_id: {String} Unique id for the current snippet instance.
+
+  Usage:
+  {% render 'kit-badges', unique_id: unique_id %}
+{%- endcomment -%}
+
+{{ 'kit-builder.css' | asset_url | stylesheet_tag }}
+
+<div class="kit-badges-container">
+    <h3 style="margin-top: 20px;">Badges <span id="kit_badge-header-{{ unique_id }}"></span></h3>
+    <ul class="kit-badges">
+        <script>
+            // dynamic function name otherwise it will override the other badge groups
+            function updateBadgePrice_{{ unique_id }}(value) {
+                const badges = {{ product.metafields.kit_builder.badges.value | json }};
+                const badge = badges.find(b => b.name === value);
+                const priceSpan = document.getElementById("kit_badge-header-{{ unique_id }}");
+                if (value === 'none' || !badge?.price) {
+                    priceSpan.textContent = '';
+                    window.product.kit_builder.badge.price = 0;
+                } else {
+                    const storeCurrency = "{{ shop.money_format | first }}";
+                    {% comment %} const price = badge.price.amount; {% endcomment %}
+                    const price = parseFloat(badge.price.amount).toFixed(2);
+                    if (isNaN(price)) {
+                        priceSpan.textContent = '';
+                        window.product.kit_builder.badge.price = 0;
+                    } else {
+                        priceSpan.textContent = `+ ${storeCurrency}${price}`;
+                        // Store globally to update price in other components
+                        window.product.kit_builder.badge.price = price;
+                    }
+                }
+            }
+
+            function updateBadgeProperties(value) {
+                const badgeInput = document.querySelector(
+                    'input[name="properties[Badge]"]'
+                );
+                const badgePriceInput = document.querySelector(
+                    'input[name="properties[_badgePrice]"]'
+                );
+
+                if (value === 'none') {
+                    badgeInput.value = 'None';
+                    badgePriceInput.value = '0';
+                } else {
+                    const badges = {{ product.metafields.kit_builder.badges.value | json }}
+                    const badge = badges.find(b => b.name === value);
+                    const price = parseFloat(badge.price.amount).toFixed(2);
+                    badgePriceInput.value = price;
+                    const currency = "{{ shop.money_format | first }}";
+                    badgeInput.value = `${badge.name} (${currency}${price})`;
+                }
+            }
+
+            // Update badge price when any badge is changed
+            document.addEventListener('DOMContentLoaded', () => {
+                const radioButtons = document.querySelectorAll('input[name="badge-group-{{ unique_id }}"]');
+                
+                radioButtons.forEach(radio => {
+                    radio.addEventListener('change', (e) => {
+                        updateBadgePrice_{{ unique_id }}(e.target.value);
+                        updateKitBuilderPrice();
+
+                        if (e.target.checked) {
+                            updateBadgeProperties(e.target.value);
+                        }
+                    });
+                });
+            });
+        </script>
+        <li>
+            <label class="kit-badge">
+                <input type="radio" name="badge-group-{{ unique_id }}" value="none" checked/>
+                <span>No Badge</span>
+            </label>
+        </li>
+        {% for badge in product.metafields.kit_builder.badges.value %}
+            <li>
+                <label class="kit-badge">
+                    <input type="radio" name="badge-group-{{ unique_id }}" value="{{ badge.name }}"/>
+                    {% if badge.image != blank %}
+                        <img src="{{ badge.image | image_url }}" alt="Kit badge called {{ badge.name }}" width="50" height="50">
+                    {% endif %}
+                    <span>{{ badge.name }}</span>
+                </label>
+            </li>
+        {%  endfor %}
+    </ul>
+</div>

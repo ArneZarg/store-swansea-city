@@ -1,0 +1,11 @@
+{% for tag in product.tags %}
+  {% assign t = tag | downcase %}
+
+  {% if t contains "personalised-" %}
+    <div class="field">
+      {% assign property_name = t | remove: "personalised-" %}
+      <label>Please Enter the {{ property_name | capitalize }}</label>
+      <input class="input" name="properties[{{ property_name }}]" style="border:solid 1px black"/>
+      </div>
+  {% endif %}
+{% endfor %}
