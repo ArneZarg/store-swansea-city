@@ -1,3 +1,21 @@
+{% assign customer_country = localization.country.iso_code %}
+
+{% if customer_country == "GB" %}
+    {% assign free_shipping_value = settings.free_shipping_uk | times: 100 %}
+    {% assign free_shipping_js = settings.free_shipping_uk | times: 1.0 %}
+{% else %}
+    {% assign free_shipping_value = settings.free_shipping_world | times: 100 %}
+    {% assign free_shipping_js = settings.free_shipping_world | times: 1.0 %}
+{% endif %}
+
+{% assign cart_total = cart.total_price %}
+{% assign remainder = free_shipping_value | minus: cart_total %}
+
+{% if cart_total >= free_shipping_value %}
+    {% assign progress = 100 %}
+{% else %}
+    {% assign progress = cart_total | times: 100.0 | divided_by: free_shipping_value %}
+{% endif %}
 <style>
     #cart-progress-bar .progress-container{
         width:100%;
@@ -8,7 +26,7 @@
         overflow:hidden;
     }
     #cart-progress-bar .progress-value{
-        width:{{ cart.items_subtotal_price | money_without_currency}}%;
+        width:{{ progress }}%;
         max-width:100%;
         position:absolute;
         left:0;
@@ -21,7 +39,8 @@
         font-weight:bold;
     }
 </style>
-{% assign remainder = 10000 | minus:cart.total_price %}
+
+
 <div id="cart-progress-bar">
     <div class="progress-message">
         {% if remainder > 0 %}
@@ -34,8 +53,7 @@
         <div class="progress-value"></div>
     </div>
 </div>
-
-<script>
+{% comment %} <script>
     document.addEventListener('cart:updated',(e)=>{
         const {cart} = event.detail;
         updateProgressBar(cart);
@@ -43,17 +61,17 @@
     })
     const updateProgressBar = (cart) => {
         const {total_price} = cart;
-        const total_price_float = total_price/100.0;
+        const total_price_float = total_price/{{free_shipping_js}};
         const progressVal = document.querySelector('#cart-progress-bar .progress-value');
         progressVal.style.width = `${total_price_float}%`;
     }
     const updateMessage = (cart) => {
         const {total_price} = cart;
-        const total_price_float = total_price/100.0;
+        const total_price_float = total_price/{{free_shipping_js}};
         const remainder = 100 - total_price_float;
         const currency = "{{ cart.total_price | money }}"[0];
         const remainderTxt = document.querySelector('#cart-progress-bar .remainder');
         const money_format = `${currency}${remainder}`;
         remainderTxt.textContent = `${money_format}`;
     }
-</script>
+</script> {% endcomment %}

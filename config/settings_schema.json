@@ -1321,5 +1321,24 @@
         "unit": "s"
       }
     ]
+  },
+  {
+    "name": "Free Shipping Threshold",
+    "settings": [
+      {
+        "type": "number",
+        "label":"Free Shipping UK",
+        "default":100,
+        "id": "free_shipping_uk",
+        "info": "Free shipping threshold for customers in the United Kingdom."
+      },
+      {
+        "type":"number",
+        "label": "Free Shipping International",
+        "default":200,
+        "id":"free_shipping_world",
+        "info": "Free shipping threshold for customers outside of the United Kingdom."
+      }
+    ]
   }
 ]
