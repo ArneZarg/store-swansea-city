@@ -5,6 +5,9 @@
     border-top: 1px solid #E1E1E1;
     background-color: transparent !important;
   }
+  .drawer__title{
+    font-size:1.8em;
+    }
 </style>
 
 {%- if request.page_type != 'cart' and settings.cart_type == 'drawer' -%}
@@ -41,13 +44,13 @@
           <li style="text-align: center; min-width: 43px;">
             <span class="drawer__title heading lg:text-2xl text-xl leading-none tracking-tight">{{ section.settings.cart_heading | escape }}</span>
           </li>
-          {%- if section.settings.recent_products_enabled -%}
+          {% comment %} {%- if section.settings.recent_products_enabled -%}
             <li>
               <button class="drawer__tab" type="button" aria-controls="RecentlyViewed-{{ section.id }}" aria-expanded="false">
                 <span class="drawer__title heading lg:text-3xl text-2xl leading-none tracking-tight">{{ section.settings.recent_products_heading | escape }}</span>
               </button>
             </li>
-          {%- endif -%}
+          {%- endif -%} {% endcomment %}
           <li>
             <button class="cart-drawer-button button--close drawer__close flex items-center justify-center" type="button" aria-controls="CartDrawer" aria-expanded="false" aria-label="{{ 'general.accessibility.close' | t | escape }}">
               {%- render 'icon', icon: 'close', size: 'lg' -%}
@@ -57,6 +60,7 @@
       </gesture-element>
 
       <div class="drawer__content opacity-0 invisible flex flex-col h-full grow shrink">
+        
         <div id="MiniCart-{{ section.id }}" class="drawer__panel opacity-0 flex flex-col overflow-hidden" open>
           <span class="sr-only">{{ 'general.cart.title' | t }}</span>
           <div class="flex flex-col h-full">
@@ -98,6 +102,7 @@
               </div>
             {%- endif -%}
             <div class="drawer__scrollable relative flex flex-col gap-9 grow shrink{% if cart == empty %} hidden{% endif %}">
+            {%- render 'cart-progress-bar' -%}
               {%- liquid
                 if section.settings.show_free_shipping_bar and section.settings.free_shipping_minimum_amount != blank
                   assign minimum_amounts = section.settings.free_shipping_minimum_amount | remove: ' '
