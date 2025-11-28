@@ -141,7 +141,9 @@
               </div>
             {%- endif -%}
             <div class="drawer__scrollable relative flex flex-col gap-9 grow shrink{% if cart == empty %} hidden{% endif %}">
+            {% if section.settings.show_free_shipping_bar %}
             {%- render 'cart-progress-bar' ukThreshold:section.settings.free_shipping_minimum_amount -%}
+            {% endif %}
               {%- liquid
                 if section.settings.show_free_shipping_bar and section.settings.free_shipping_minimum_amount != blank
                   assign minimum_amounts = section.settings.free_shipping_minimum_amount | remove: ' '
@@ -813,14 +815,6 @@
       "id": "show_free_shipping_bar",
       "label": "t:sections.cart-drawer.settings.show_free_shipping_bar.label",
       "default": false
-    },
-    {
-      
-      "type": "text",
-      "id": "free_shipping_minimum_amount",
-      "default": "100",
-      "label": "t:sections.cart-drawer.settings.free_shipping_minimum_amount.label",
-      "info": "t:sections.cart-drawer.settings.free_shipping_minimum_amount.info"
     },
     {
       "type": "header",
