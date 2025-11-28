@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "overlay-group",
   "type": "header",
@@ -15,7 +24,7 @@
         "free_shipping_minimum_amount": "100",
         "disclaimer_note_label": "Note:",
         "disclaimer_text": "Personalised items cannot be returned or exchanged. Ensure that you have selected the correct details before checking out.",
-        "cart_recommendations_enabled": true,
+        "cart_recommendations_enabled": false,
         "cart_recommendations_heading": "BOUGHT TOGETHER",
         "cart_recommendations_limit": 5,
         "show_cart_recommendations_vendor": false,
