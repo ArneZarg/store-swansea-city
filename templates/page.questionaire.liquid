@@ -9,6 +9,9 @@
         display:flex;
         justify-content:center;
     }
+    .questionaire-layout .hide-on-desktop{
+        display:none;
+    }
     .questionaire-layout .questionaire-container{
         padding:1.5rem 3rem;
         width:66%;
@@ -24,22 +27,33 @@
         height:12px;
         width:100%;
     }
-    .questionaire-layout .progress-value{
+    .questionaire-layout #quest-progress-value{
         position:absolute;
         height:100%;
-        max-width:100%;
-        width:33%;
         left:0;
         top:0;
         border-radius:8px;
         background:rgba(217, 217, 217, 1);
+        transition:width 1s ease-in-out;
+        -webkit-transition: width 1s ease-in-out;
+        -moz-transition: width 1s ease-in-out;
+        -o-transition: width 1s ease-in-out;
     }
+    {% comment %} .questionaire-layout .progress-value[data-progress="value-0"]{
+        width:33%;
+    }
+    .questionaire-layout .progress-value[data-progress="value-1"]{
+        width:66%;
+    }
+    .questionaire-layout .progress-value[data-progress="value-2"]{
+        width:95%;
+    } {% endcomment %}
     .questionaire-layout .progress-title{
         color:#B6B6B6;
         font-size:15px;
         margin-bottom:15px;
     }
-    .questionaire-form{
+    .questionaire-layout .questionaire-form{
         width:66%;
         display:flex;
         flex-direction:column;
@@ -47,13 +61,13 @@
         margin:0 auto;
         gap:56px;
     }
-    .question-title{
+    .questionaire-layout .question-title{
         font-size:28px;
         color:#fff;
         font-weight:400;
     }
-    .questionaire-btn-container{
-        display:flex;
+    .questionaire-layout .questionaire-btn-container{
+        display:none;
         flex-direction:row;
         gap:15px;
         justify-content:center;
@@ -61,7 +75,10 @@
         width:100%;
         flex-wrap:wrap;
     }
-    .questionaire-btn{
+    .questionaire-layout .questionaire-btn-container.current-question{
+        display:flex;
+    }
+    .questionaire-layout .questionaire-btn{
         display:flex;
         flex-direction:column;
         color:#fff;
@@ -71,41 +88,293 @@
         flex:1 1 calc(50% - 15px);
         font-size:20px;
         padding:20px;
+        position:relative;
+        .q-check{
+            display:none;
+            position: absolute;
+            top: 50%;
+            left: auto;
+            transform: translateY(-50%);
+        }
     }
-    .questionaire-bottom{
+    .questionaire-layout .questionaire-btn.active{
+        border:1px solid #fff;
+        background-color:#fff;
+        color:#000;
+        .q-check{
+            display: block;
+        }
+    }
+    .questionaire-layout .questionaire-bottom{
         width:100%;
         display:flex;
         justify-content:space-between;
+        align-items:center;
+    }
+    .questionaire-layout .questionaire-back-btn{
+        color:rgba(255, 255, 255, 0.5);
+        display:flex;
+        align-items:center;
+        line-height:1;
+        font-size:16px;
+        visibility:hidden;
+    }
+    .questionaire-layout .back-arrow svg{
+        opacity:0.5;
+    }
+    .questionaire-layout .btn-next{
+        color:#1E1E1E;
+        background:#fff;
+        border:1px #fff solid;
+        border-radius:60px;
+        width: 239px;
+        font-size:20px;
+        padding: 10px;
+    }
+    @media(max-width:768px){
+        .questionaire-layout{
+            display:block;
+        }
+        .questionaire-layout .hide-on-mobile{
+            display:none;
+        }
+        .questionaire-layout .questionaire-back-btn{
+            margin-bottom:15px;
+        }
+        .questionaire-layout .hide-on-desktop{
+            display:flex;
+        }
+        .questionaire-layout .questionaire-container{
+            width:100%;
+            padding:1.5rem 1.25rem;
+            gap:40px;
+        }
+        .questionaire-layout .questionaire-form{
+            width:90%;
+            gap:20px;
+        }
+        .questionaire-layout .questionaire-btn{
+            flex:1 1 100%;
+            font-size:16px;
+            padding:15px;
+        }
+        .questionaire-layout .questionaire-bottom{
+            width:90%;
+            margin:0 auto;
+        }
+        .questionaire-layout .progress-container{
+            height:7px;
+        }
+        .questionaire-layout .btn-next{
+            width:100%;
+            margin-top:30px;
+        }
+        .questionaire-layout .question-title{
+            text-align:center;
+            font-size:19px;
+        }
     }
 </style>
 <div class="questionaire-layout">
     <div class="questionaire-container">
         <div class="questionaire-progress">
-            <div class="progress-title">Question <span class="question-num">1</span> of 3</div>
+            <button class="questionaire-back-btn hide-on-desktop">
+                <span class="back-arrow">{% render 'questionaire-back-arrow' %}</span>&nbsp;Back
+            </button>
+            <div class="progress-title hide-on-mobile">Question <span class="question-num">1</span> of 3</div>
             <div class="progress-container">
-                <div class="progress-value"></div>
+                <div id="quest-progress-value" style="width:33%" data-progress="value-0"></div>
             </div>
         </div>
         <div class="questionaire-form">
             <div class="question-title">
                 Who are you shopping for?
             </div>
-            <div class="questionaire-btn-container">
-                <button class="questionaire-btn">
+            <div class="questionaire-btn-container current-question" data-question="q-0">
+                <button class="questionaire-btn" data-answer="men">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
                     Men
                 </button>
-                <button class="questionaire-btn">
+                <button class="questionaire-btn" data-answer="women">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
                     Women
                 </button>
-                <button class="questionaire-btn">
+                <button class="questionaire-btn" data-answer="kids">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
                     Kids/Baby
                 </button>
-                <button class="questionaire-btn">
+                <button class="questionaire-btn" data-answer="everyone">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
                     Everyone
+                </button>
+            </div>
+            <div class="questionaire-btn-container" data-question="q-1">
+                <button class="questionaire-btn" data-answer="tops">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
+                    Tops & Jerseys
+                </button>
+                <button class="questionaire-btn" data-answer="bottoms">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
+                    Bottoms
+                </button>
+                <button class="questionaire-btn" data-answer="outerwear">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
+                    Outerwear & Jackets
+                </button>
+                <button class="questionaire-btn" data-answer="accessories">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
+                    Accessories
+                </button>
+            </div>
+            <div class="questionaire-btn-container" data-question="q-2">
+                <button class="questionaire-btn" data-answer="casual">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
+                    Casual & Comfortable
+                </button>
+                <button class="questionaire-btn" data-answer="athletic">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
+                    Athletic & Travel
+                </button>
+                <button class="questionaire-btn" data-answer="limited-edition">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
+                    Limited Edition
+                </button>
+                <button class="questionaire-btn" data-answer="official-kits">
+                    <span class="q-check">
+                        {% render 'questionaire-check' %}
+                    </span>
+                    Official Kits
                 </button>
             </div>
         </div>
         <div class="questionaire-bottom">
+            <button class="questionaire-back-btn hide-on-mobile">
+                <span class="back-arrow">{% render 'questionaire-back-arrow' %}</span>&nbsp;Back
+            </button>
+            <button class="btn btn-next">
+                Next
+            </button>
         </div>
     </div>
 </div>
+<script>
+    //initialize answers
+    const answers = {
+        'q-0':[],
+        'q-1':[],
+        'q-2':[]
+    }
+    const progressWidths = ['33%','66%','95%'];
+    const questions = ['Who are you shopping for?','What type of clothing are you looking for?',"What's your style preference?"];
+
+    //initialize step
+    let step = 0;
+    
+    //elements
+    const layout = document.querySelector('.questionaire-layout')
+    const answerBtns = layout.querySelectorAll('.questionaire-btn');
+    const nextBtn = layout.querySelector('.btn-next');
+    const backBtn = layout.querySelectorAll('.questionaire-back-btn');
+    const questionForm = layout.querySelectorAll('.questionaire-btn-container');
+    const questionTitle = layout.querySelector('.question-title');
+    const progressBar = layout.querySelector('#quest-progress-value');
+    const questionNum = layout.querySelector('.question-num');
+
+    //event listeners
+    answerBtns.forEach((btn)=>{
+        btn.addEventListener('click',handleBtnClick);
+    });
+    nextBtn.addEventListener('click',handleNext);
+    backBtn.forEach(btn => {
+        btn.addEventListener('click',handleBack);
+    })
+
+    //functions
+    function handleBtnClick(){
+        const btn = this;
+        btn.classList.toggle('active');
+    }
+
+    function handleNext(){
+        
+        //gather answers
+        const currentQuestion = document.querySelector(`.questionaire-btn-container[data-question="q-${step}"]`);
+        const chosenBtns = currentQuestion.querySelectorAll('.questionaire-btn.active');
+        answers[`q-${step}`] = [];//reset for answer changes.
+        chosenBtns.forEach(btn => {
+            const answer = btn.getAttribute('data-answer');
+            answers[`q-${step}`].push(answer);
+        });
+        if(step < 2){
+            // go to next step
+            step++;
+            if(step == 1 || step == 2){
+                backBtn.forEach(btn => {
+                    btn.style.visibility = "visible";
+                });
+            }else{
+                backBtn.forEach(btn => {
+                    btn.style.visibility = "hidden";
+                });
+            }
+            questionForm.forEach(q => {
+                q.classList.remove('current-question');
+            });
+            const nextQuestion = document.querySelector(`.questionaire-btn-container[data-question="q-${step}"]`);
+            nextQuestion.classList.add('current-question');
+            questionTitle.innerText = questions[step];
+            questionNum.innerText = step + 1;
+            progressBar.style.width = progressWidths[step];
+            
+        }else{
+            //to do: handle next steps
+            console.table('final answers: ', answers);
+        }
+    }
+
+    function handleBack(){
+        if(step > 0){
+            step--;//go to previous step
+            if(step == 1 || step == 2){
+                backBtn.forEach(btn => {
+                    btn.style.visibility = "visible";
+                });
+            }else{
+                backBtn.forEach(btn => {
+                    btn.style.visibility = "hidden";
+                });
+            }
+            questionForm.forEach(q => {
+                q.classList.remove('current-question');
+            });
+            const prevQuestion = document.querySelector(`.questionaire-btn-container[data-question="q-${step}"]`);
+            prevQuestion.classList.add('current-question');
+            questionTitle.innerText = questions[step];
+            questionNum.innerText = step + 1;
+            progressBar.style.width = progressWidths[step];
+        }
+    }
+
+</script>
