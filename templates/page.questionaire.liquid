@@ -1,0 +1,111 @@
+<style>
+    .questionaire-layout{
+        height:100vh;
+        width:100%;
+        background-image:url({{'questionaire_desktop_bg.png' | file_url }});
+        background-size:cover;
+        background-color:#000;
+        background-repeat:no-repeat;
+        display:flex;
+        justify-content:center;
+    }
+    .questionaire-layout .questionaire-container{
+        padding:1.5rem 3rem;
+        width:66%;
+        display:flex;
+        flex-direction:column;
+        gap:56px;
+    }
+    .questionaire-layout .progress-container{
+        position:relative;
+        overflow:hidden;
+        border-radius:8px;
+        background:rgba(217, 217, 217, 0.7);
+        height:12px;
+        width:100%;
+    }
+    .questionaire-layout .progress-value{
+        position:absolute;
+        height:100%;
+        max-width:100%;
+        width:33%;
+        left:0;
+        top:0;
+        border-radius:8px;
+        background:rgba(217, 217, 217, 1);
+    }
+    .questionaire-layout .progress-title{
+        color:#B6B6B6;
+        font-size:15px;
+        margin-bottom:15px;
+    }
+    .questionaire-form{
+        width:66%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin:0 auto;
+        gap:56px;
+    }
+    .question-title{
+        font-size:28px;
+        color:#fff;
+        font-weight:400;
+    }
+    .questionaire-btn-container{
+        display:flex;
+        flex-direction:row;
+        gap:15px;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        flex-wrap:wrap;
+    }
+    .questionaire-btn{
+        display:flex;
+        flex-direction:column;
+        color:#fff;
+        border:1px solid rgba(255, 255, 255, 0.5);
+        background-color:rgba(255, 255, 255, 0.12);
+        border-radius:10px;
+        flex:1 1 calc(50% - 15px);
+        font-size:20px;
+        padding:20px;
+    }
+    .questionaire-bottom{
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+    }
+</style>
+<div class="questionaire-layout">
+    <div class="questionaire-container">
+        <div class="questionaire-progress">
+            <div class="progress-title">Question <span class="question-num">1</span> of 3</div>
+            <div class="progress-container">
+                <div class="progress-value"></div>
+            </div>
+        </div>
+        <div class="questionaire-form">
+            <div class="question-title">
+                Who are you shopping for?
+            </div>
+            <div class="questionaire-btn-container">
+                <button class="questionaire-btn">
+                    Men
+                </button>
+                <button class="questionaire-btn">
+                    Women
+                </button>
+                <button class="questionaire-btn">
+                    Kids/Baby
+                </button>
+                <button class="questionaire-btn">
+                    Everyone
+                </button>
+            </div>
+        </div>
+        <div class="questionaire-bottom">
+        </div>
+    </div>
+</div>
