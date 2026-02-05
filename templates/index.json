@@ -15,9 +15,9 @@
         "slide_EVMFB4": {
           "type": "slide",
           "settings": {
-            "mobile_image": "shopify://shop_images/banner_mob_1.jpg",
+            "mobile_image": "shopify://shop_images/banner_mob_1.png",
             "desktop_image": "shopify://shop_images/banner_desk_1.jpg",
-            "url": "",
+            "url": "shopify://collections/legends-x-swans-x-death-row",
             "title": "Legends x Swans x Death Row",
             "top_text": "",
             "subtitle": "Exclusive Legends x Swansea x Death Row collection. Officially licensed. Limited quantities — shop now.",
@@ -37,9 +37,9 @@
         "slide_fmYJi4": {
           "type": "slide",
           "settings": {
-            "mobile_image": "shopify://shop_images/banner_mob_2.jpg",
+            "mobile_image": "shopify://shop_images/banner_mob_2_92c4cc50-5a06-4f9a-b1fe-5d52004b1a5c.jpg",
             "desktop_image": "shopify://shop_images/banner_desk_2.jpg",
-            "url": "",
+            "url": "shopify://products/limited-edition-20-year-stadium-collectible-coin",
             "title": "20 Years at the stadium",
             "top_text": "Limited Edition",
             "subtitle": "Individually numbered limited edition coin. Only 150 Available!",
@@ -59,9 +59,9 @@
         "slide_aPcrem": {
           "type": "slide",
           "settings": {
-            "mobile_image": "shopify://shop_images/banner_mob_3.jpg",
+            "mobile_image": "shopify://shop_images/banner_mob_3_714e2dbf-6845-4b9c-a7b9-4ec4dfb8a342.jpg",
             "desktop_image": "shopify://shop_images/banner_desk_3.jpg",
-            "url": "",
+            "url": "shopify://collections/away",
             "title": "The Away Kit, Elevated",
             "top_text": "",
             "subtitle": "The Swansea City 25/26 Away Kit. Worn with purpose, wherever the game takes you.",
@@ -81,9 +81,9 @@
         "slide_BFkQYR": {
           "type": "slide",
           "settings": {
-            "mobile_image": "shopify://shop_images/banner_mob_4.jpg",
+            "mobile_image": "shopify://shop_images/banner_mob_4_2ae51dbc-946d-47a1-88af-ef5c1f622b82.jpg",
             "desktop_image": "shopify://shop_images/banner_desk_4.jpg",
-            "url": "",
+            "url": "shopify://collections/third",
             "title": "THIRD KIT NOW BACK IN STOCK!",
             "top_text": "",
             "subtitle": "The 25/26 Swansea City Third Kit—back in stock now.",
@@ -97,7 +97,8 @@
             "title_padding_bottom_m": 20,
             "subtitle_padding_bottom_m": 20,
             "title_padding_bottom_d": 20,
-            "subtitle_padding_bottom_d": 20
+            "subtitle_padding_bottom_d": 20,
+            "middle_img": "shopify://shop_images/3_logos.png"
           }
         }
       },
@@ -113,7 +114,8 @@
         "title_font_size_d": 80,
         "subtitle_font_size_m": 14,
         "subtitle_font_size_d": 17,
-        "btn_txt_font_size": 18
+        "btn_txt_font_size": 18,
+        "top_text_font_size": 35
       }
     },
     "slideshow": {
