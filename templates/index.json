@@ -29,9 +29,9 @@
             "btn_txt_color": "#000000",
             "overlay": false,
             "title_padding_bottom_m": 20,
-            "subtitle_padding_bottom_m": 20,
+            "subtitle_padding_bottom_m": 25,
             "title_padding_bottom_d": 20,
-            "subtitle_padding_bottom_d": 20
+            "subtitle_padding_bottom_d": 25
           }
         },
         "slide_fmYJi4": {
