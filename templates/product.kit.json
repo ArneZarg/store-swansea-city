@@ -64,7 +64,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_quantity_selector": false,
-            "show_price": false,
+            "show_price": true,
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true,
             "enable_back_in_stock": true,
