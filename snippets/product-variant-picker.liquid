@@ -60,8 +60,16 @@
               <div class="flex gap-2">
                 {{- option.name -}}:
                 <span class="font-medium" id="{{ section_id }}-{{ product_id }}-option{{ option.position }}">{{ option.selected_value }}</span>
+                {%- render 'product-inventory',
+                block: block,
+                product: product,
+                product_id: product.id,
+                section_id: section.id,
+                product_form_id: product_form_id
+              -%}
               </div>
             {%- endif -%}
+            
             {%- if is_size -%}
               <div class="flex items-center gap-2">
                 {%- render 'icon', icon: 'ruler', size: 'xs', class: 'stroke-1' -%}
@@ -96,6 +104,7 @@
           </div>
           <ul class="swatches swatches--{{ settings.rounded_swatch }}{% if block.settings.color_swatch_type == 'variant' %} swatches--variant{% endif %} flex items-start flex-wrap gap-4">
             {%- for value in option.values -%}
+              {%if value.variant.inventory_quantity > 4 %}
               <li>
                 <magnet-element class="block">
                   <input
@@ -185,6 +194,7 @@
                   {%- endif -%}
                 </magnet-element>
               </li>
+              {% endif %}
             {%- endfor -%}
           </ul>
         </fieldset>

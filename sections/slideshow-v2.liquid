@@ -1,0 +1,399 @@
+{% assign s = section.id %}
+{%- assign first_block = section.blocks | first -%}
+{%- assign first_desktop = first_block.settings.desktop_image -%}
+{%- assign first_mobile  = first_block.settings.mobile_image | default: first_desktop -%}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<style>
+  #{{ s }}-swansea-slide-show{
+    {%- if first_desktop != blank -%}
+      --ratio-desktop: {{ 1 | divided_by: first_desktop.aspect_ratio | times: 100 }}%;
+    {%- else -%}
+      --ratio-desktop: 56.25%; /* fallback 16:9 */
+    {%- endif -%}
+
+    {%- if first_mobile != blank -%}
+      --ratio-mobile: {{ 1 | divided_by: first_mobile.aspect_ratio | times: 100 }}%;
+    {%- else -%}
+      --ratio-mobile: var(--ratio-desktop);
+    {%- endif -%}
+  }
+
+  #{{ s }}-swansea-slide-show{
+    {%- if first_desktop != blank -%}
+      --ratio-desktop: {{ 1 | divided_by: first_desktop.aspect_ratio | times: 100 }}%;
+    {%- else -%}
+      --ratio-desktop: 56.25%;
+    {%- endif -%}
+  }
+
+  /* MOBILE (default): natural image height */
+  #{{ s }}-swansea-slide-show .swansea-slide-background{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #{{ s }}-swansea-slide-show .swansea-slide-background picture{
+    display: block;
+    position: static;
+  }
+  #{{ s }}-swansea-slide-show .swansea-slide-background img{
+    display: block;
+    width: 100%;
+    height: auto;       /* critical on mobile */
+    position: static;   /* critical on mobile */
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* DESKTOP ONLY: ratio box */
+  @media (min-width: 769px){
+    #{{ s }}-swansea-slide-show .swansea-slide-background{
+      height: 0;
+      padding-top: var(--ratio-desktop);
+    }
+
+    #{{ s }}-swansea-slide-show .swansea-slide-background picture,
+    #{{ s }}-swansea-slide-show .swansea-slide-background img{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  /* Keep overlay from affecting height */
+  #{{ s }}-swansea-slide-show .swansea-slide{
+    position: relative;
+    display: block;
+  }
+  #{{ s }}-swansea-slide-show .swansea-slide-txt{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+  }
+  #{{ s }}-swansea-slide-show .page-width.txt-container{
+    width:100%;
+    padding-top:25px;
+  }
+  #{{ s }}-swansea-slide-show .middle-img{
+    margin:0 auto 30px;
+    width:190px;
+  }
+  @media(min-width:769px){
+    #{{ s }}-swansea-slide-show .swansea-slide-txt{
+      align-items:center;
+    }
+    #{{ s }}-swansea-slide-show .page-width.txt-container{
+      padding-top:0;
+    }
+    #{{ s }}-swansea-slide-show .middle-img{
+      width:280px;
+      margin:0;
+      margin-bottom:30px;
+      
+    }
+  }
+  
+
+  /* font-sizes */
+  #{{ s }}-swansea-slide-show .slide-title-sw h1{
+    font-size:{{ section.settings.title_font_size_m }}px;
+    text-align: center;
+    line-height: 0.8;
+    text-transform: uppercase;
+  }
+  #{{ s }}-swansea-slide-show .slide-subtitle-sw p{
+    font-size:{{ section.settings.subtitle_font_size_m }}px;
+    line-height:21.5px;
+    text-align:center;
+  }
+  #{{ s }}-swansea-slide-show button{
+    font-size:{{ section.settings.btn_txt_font_size }}px;
+    text-align: center;
+    font-family: "GT America Trial" sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    padding:11px 51px;
+    border-radius:160px;
+    display:block;
+    margin:0 auto;
+  }
+  @media(min-width:769px){
+    #{{ s }}-swansea-slide-show .slide-title-sw h1{
+      font-size:{{ section.settings.title_font_size_d }}px;
+      text-align:left;
+    }
+    #{{ s }}-swansea-slide-show .slide-title-sw h1 span{
+      font-size:{{ section.settings.top_text_font_size }}px;
+    }
+    #{{ s }}-swansea-slide-show .slide-subtitle-sw p{
+      font-size:{{ section.settings.subtitle_font_size_d }}px;
+      text-align:left;
+    }
+    #{{ s }}-swansea-slide-show button{
+      margin:0;
+      padding:18px 51px;
+    }
+    #{{ s }}-swansea-slide-show .desktop-container{
+      width:45%;
+    }
+  }
+</style>
+
+<div id="{{ s }}-swansea-slide-show">
+  <div data-swiper-slide class="swiper homepage-slider">
+    <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      <style>
+        #{{ s }}-swansea-slide-show .slide-title-sw[data-index="{{ forloop.index0 }}"]{
+          padding-bottom:{{ block.settings.title_padding_bottom_m }}px;
+        }
+        #{{ s }}-swansea-slide-show .slide-subtitle-sw[data-index="{{ forloop.index0 }}"]{
+          padding-bottom:{{ block.settings.subtitle_padding_bottom_m }}px;
+        }
+        @media(min-width:769px){
+          #{{ s }}-swansea-slide-show .slide-title-sw[data-index="{{ forloop.index0 }}"]{
+            padding-bottom:{{ block.settings.title_padding_bottom_d }}px;
+          }
+          #{{ s }}-swansea-slide-show .slide-subtitle-sw[data-index="{{ forloop.index0 }}"]{
+            padding-bottom:{{ block.settings.subtitle_padding_bottom_d }}px;
+          }
+        }
+      </style>
+    <div class="swiper-slide">
+      <a class="swansea-slide" href="{{ block.settings.url }}">
+        <div class="swansea-slide-background">
+          <picture>
+            <source srcset="{{ block.settings.desktop_image | image_url }}" media="(min-width:769px)">
+            <img src="{{ block.settings.mobile_image | image_url }}">
+          </picture>
+        </div>
+        <div class="swansea-slide-txt" {% if block.settings.overlay %}style="background:rgba(0,0,0,0.3);"{% endif %}>
+          <div class="page-width txt-container">
+            <div class="desktop-container">
+              <div class="slide-title-sw" data-index="{{ forloop.index0 }}">
+                <h1 style="color:{{ block.settings.title_color }} !important;">
+                  {% if block.settings.top_text != "" %}<span class="top-txt" style="color:{{ block.settings.top_txt_color }}">{{ block.settings.top_text }}</span><br>{% endif %}
+                  {{ block.settings.title }}
+                </h1>
+              </div>
+              <div class="slide-subtitle-sw" data-index="{{ forloop.index0 }}">
+                <p style="color:{{ block.settings.subtitle_color }};">{{ block.settings.subtitle }}</p>
+              </div>
+              {% if block.settings.middle_img %}
+              <div class="middle-img">
+                <img src="{{ block.settings.middle_img | image_url }}">
+              </div>
+              {% endif %}
+              <button 
+                class="btn btn-primary"
+                style="color:{{ block.settings.btn_txt_color }};background:{{ block.settings.btn_color }};border-radius:1px solid {{ block.settings.btn_color }}">
+                {{ block.settings.btn_txt }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+<script>
+  const swiper = new Swiper('[data-swiper-slide]',{
+    loop:true,
+  })
+</script>
+{% schema %}
+{
+  "name": "Home Slideshow V2",
+  "max_blocks": 5,
+  "settings":[
+    {
+      "type":"number",
+      "id": "title_font_size_m",
+      "label":"Title Font Size Mobile",
+      "info": "Unit is in px",
+      "default":45
+    },
+    {
+      "type":"number",
+      "id":"title_font_size_d",
+      "label":"Title Font Size Desktop",
+      "info":"Unit is in px",
+      "default":80
+    },
+    {
+      "type":"number",
+      "id":"subtitle_font_size_m",
+      "label":"Subitle Font Size Mobile",
+      "info":"Unit is in px",
+      "default":14
+    },
+    {
+      "type":"number",
+      "id":"subtitle_font_size_d",
+      "label":"Subitle Font Size Desktop",
+      "info":"Unit is in px",
+      "default":17
+    },
+    {
+      "type":"number",
+      "id":"btn_txt_font_size",
+      "label":"Button Text Font Size",
+      "info":"Unit is in px",
+      "default":18
+    },
+    {
+      "type":"number",
+      "id":"top_text_font_size",
+      "label": "Top Text Font Size",
+      "info": "Only desktop. Unit is in px",
+      "default":35
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name":"slide",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobiel Image"
+        },
+        {
+          "type": "image_picker",
+          "id":"desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Slide Title"
+        },
+        {
+          "type":"text",
+          "id":"top_text",
+          "label": "Top Text"
+        },
+        {
+          "type":"text",
+          "id":"subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "text",
+          "default":"SHOP NOW",
+          "label": "Button Text",
+          "id":"btn_txt"
+        },
+        {
+          "type":"color",
+          "default":"#ffffff",
+          "label": "Title Color",
+          "id":"title_color",
+          "info": "Will need to change color in rich text if multi-color"
+        },
+        {
+          "type": "color",
+          "default":"#ffffff",
+          "label":"Top Text Color",
+          "id": "top_txt_color"
+        },
+        {
+          "type":"color",
+          "default":"#ffffff",
+          "id": "subtitle_color",
+          "label": "Subtitle Color"
+        },
+        {
+          "type":"color",
+          "default":"#ffffff",
+          "id":"btn_color",
+          "label":"Button Color"
+        },
+        {
+          "type":"color",
+          "default":"#000000",
+          "id":"btn_txt_color",
+          "label":"Button Text Color"
+        },
+        {
+          "type": "checkbox",
+          "default":false,
+          "id":"overlay",
+          "label": "Overaly?"
+        },
+        {
+          "type":"header",
+          "content": "Spacing"
+        },
+        {
+          "type": "range",
+          "default":25,
+          "id": "title_padding_bottom_m",
+          "label": "Title Padding Bottom Mobile",
+          "max": 50,
+          "min":20,
+          "step": 5
+        },
+        {
+          "type": "range",
+          "default":25,
+          "id": "subtitle_padding_bottom_m",
+          "label": "Subtitle Padding Bottom Mobile",
+          "max": 50,
+          "min":20,
+          "step": 5
+        },
+        {
+          "type": "range",
+          "default":25,
+          "id": "title_padding_bottom_d",
+          "label": "Title Padding Bottom Desktop",
+          "max": 50,
+          "min":20,
+          "step": 5
+        },
+        {
+          "type": "range",
+          "default":25,
+          "id": "subtitle_padding_bottom_d",
+          "label": "Subtitle Padding Bottom Desktop",
+          "max": 50,
+          "min":20,
+          "step": 5
+        },
+        {
+          "type": "image_picker",
+          "id": "middle_img",
+          "label": "Middle Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Slideshow V2"
+    }
+  ]
+}
+{% endschema %}

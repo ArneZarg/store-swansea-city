@@ -23,13 +23,13 @@
       {%- if product_variant.inventory_quantity <= block.settings.inventory_threshold -%}
         <div class="grid gap-3 w-full">
           <span class="text-sm leading-tight">
-            {% comment %} {%- liquid
+            {%- liquid
               unless block.settings.show_inventory_quantity == 'none'
                 echo 'products.inventory.low_stock_with_count' | t: count: product_variant.inventory_quantity
               else
                 echo 'products.inventory.low_stock' | t
               endunless
-            -%} {% endcomment %}
+            -%}
           </span>
           <progress-bar class="overflow-hidden rounded-full {{ block.settings.color_scheme }}" data-value="{{ product_variant.inventory_quantity }}" data-max="{{ block.settings.inventory_threshold }}"></progress-bar>
         </div>
@@ -41,7 +41,8 @@
               if block.settings.show_inventory_quantity == 'always'
                 echo 'products.inventory.in_stock_with_count' | t: count: product_variant.inventory_quantity
               else
-                echo 'products.inventory.in_stock' | t
+                echo 'In stock'
+
               endif
             -%}
           </span>

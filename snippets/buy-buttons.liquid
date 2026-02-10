@@ -35,7 +35,7 @@
       assign enable_back_in_stock = false
     endif
 
-    if product.vendor == "Legends"
+    if product.vendor == "OutOfStock"
       assign enable_back_in_stock = true
       assign quantity_rule_soldout = true
     endif

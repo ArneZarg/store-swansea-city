@@ -1,0 +1,175 @@
+{%- comment -%}
+  Renders a collection card
+
+  Accepts:
+  - collection: {Object} Collection Liquid object
+  - image_type: {String} Type of the collection image card
+  - image_ratio: {String} Size of the collection image card
+  - block: {Object} Block object
+
+  Usage:
+  {% render 'collection-card' %}
+{%- endcomment -%}
+
+{%- liquid
+  if image_type == 'collection' and collection.image
+    assign collection_image = collection.image
+  else
+    assign collection_image = collection.products.first.featured_media.preview_image
+  endif
+
+  assign collection_title = collection.title
+
+  if block != blank
+    if block.settings.image != blank
+      assign collection_image = block.settings.image
+    endif
+
+    if block.settings.title != blank
+      assign collection_title = block.settings.title
+    endif
+
+    if block.settings.description != blank
+      assign collection_description = block.settings.description
+    endif
+
+    assign overlay_content = block.settings.overlay_content
+  endif
+
+  if image_ratio == 'adapt' and collection_image == blank
+    assign image_ratio = 'wide'
+  endif
+
+  if collection_image != blank
+    assign background_image_url = collection_image | image_url: width: 1800
+    assign background_aspect_ratio = collection_image.aspect_ratio
+  endif
+-%}
+
+<style>
+  .card-background {
+    background-color: #F2F2F2 !important;
+    min-height: 340px;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card-background .media-card__link {
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .card-background .media-card__content {
+    flex: 1 1 auto;
+    width: 100%;
+    align-items: stretch;
+  }
+  .card-image-width {
+     object-fit: contain !important;
+  }
+  .card-button {
+    width: auto !important;
+    font-family: var(--font-body-family);
+    border-radius: 40px !important;
+    font-weight: 300 !important;
+    font-size: 16px !important;
+    padding: 10px 40px !important;
+    margin: 10px !important;
+  }
+  .card-description {
+    color: #767676 !important;
+    margin-bottom: 10px !important;
+  }
+  .card-title {
+    font-weight: 700 !important;
+    font-size: 40px !important;
+    height: auto !important;
+    letter-spacing: 0.01em !important;
+  }
+  .card-content-inner {
+    padding: 32px 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+  }
+  .card-button {
+    margin-top: auto !important;
+  }
+@media (max-width: 768px) {
+  .card-button {
+    width: 100% !important;
+    font-size: 14px !important;
+    padding: 5px 0px !important;
+  }
+}
+</style>
+
+<div class="card card-background card-width media-card media-card--{{ settings.card_style }}{% if overlay_content %} media-card--overlap{% endif %}" id="shopify-block-{{ block.id }} radius-10">
+  {%- if overlay_content and block != blank -%}
+    <style>
+      #shopify-block-{{ block.id }} {
+        {%- render 'section-variables', section: block -%}
+      }
+    </style>
+  {%- endif -%}
+  {%- if collection != blank -%}
+    <a
+      href="{{ collection.url }}"
+      class="media-card__link flex flex-col justify-between w-full h-full relative"
+      aria-label="{{ collection_title | escape }}"
+      style="
+        {% if background_image_url %}background-image: url('{{ background_image_url }}');{% endif %}
+        {% if background_aspect_ratio %}aspect-ratio: {{ background_aspect_ratio }};{% endif %}
+      "
+    >
+      <div class="media-card__content flex flex-col justify-between items-center w-full text-center gap-2 mt-auto">
+        <div class="card-content-inner">
+        {% comment %} <div class="media-card__text shrink-1 grid gap-0d5">
+          {%- if collection_description != blank -%}
+            <p class="leading-none text-sm xl:text-sm sm:text-xs card-description">{{ collection_description }}</p>
+          {%- endif -%}
+          <p>
+            <span class="heading reversed-link text-xl-6xl card-title">
+              {{- collection_title | escape -}}
+              {%- if show_products_count and collection.all_products_count > 0 -%}
+                <small class="count font-medium absolute text-xs tracking-none whitespace-nowrap">{{ collection.all_products_count }}</small>
+              {%- endif -%}
+            </span>
+          </p>
+        </div> {% endcomment %}
+        <button class="button card-button ">SHOP</button>
+        {% comment %} {%- render 'icon', icon: 'arrow-right', size: 'xs', class: 'transform shrink-0' -%} {% endcomment %}
+        </div>
+      </div>
+    </a>
+  {%- else -%}
+    <a href="#" class="media-card__link flex flex-col w-full h-full relative" aria-label="{{ 'onboarding.collection_title' | t | escape }}">
+      <div class="media media--{{ image_ratio }} relative overflow-hidden">
+        {%- liquid
+          assign modulo = position | modulo: 5 | plus: 1
+          assign placeholder = 'collection-' | append: modulo
+          echo placeholder | placeholder_svg_tag: 'placeholder'
+        -%}
+      </div>
+      <div class="media-card__content flex justify-between items-center gap-4 w-full text-{{ settings.card_text_alignment }}">
+        {% comment %} <div class="media-card__text shrink-1 grid gap-0d5">
+          <p>
+            <span class="heading reversed-link text-xl-5xl tracking-tighter leading-tight relative">
+              {{- 'onboarding.collection_title' | t | escape -}}
+            </span>
+          </p>
+        </div> {% endcomment %}
+        {% comment %} {%- render 'icon', icon: 'arrow-right', size: 'xs', class: 'transform shrink-0' -%} {% endcomment %}
+      </div>
+    </a>
+  {%- endif -%}
+</div>

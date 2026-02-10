@@ -28,7 +28,8 @@
   .card.product-card {
     background-color: transparent;
     max-width: 295px;
-    max-height: 467px;
+    max-height: none;
+    overflow: visible;
   }
 
   .product-card__media-wrapper :is(.media, .flickity-viewport) {
@@ -56,8 +57,8 @@
     display: flex;
     items-center: center;
     justify-content: center;
-    position: absolute;
-    top: 8px;
+    {% comment %} position: absolute; {% endcomment %}
+    bottom: 8px;
     right: 8px;
     width: 32px;
     height: 32px;
@@ -71,10 +72,14 @@
     gap: 3px !important;
   }
 
+  .product-card__quick-add .button {
+    max-width: 100%;
+  }
+
   {% comment %} Rotating border effect on hover {% endcomment %}
   .quick-add__button::after {
     content: '';
-    position: absolute;
+    {% comment %} position: absolute; {% endcomment %}
     top: 0;
     left: 0;
     width: 100%;
@@ -150,10 +155,11 @@
       assign product_url = product.url
     endif
 
-    if product.vendor == "Legends"
+    if product.vendor == "OutOfStock"
       assign product.available = false
     endif
   -%}
+  {% comment %} <div class="card product-card {% unless featured_media %} no-media{% endunless %}{% if product.available and show_quick_add and mobile_quick_add %} mobile:with-quick-add{% endif %} flex flex-col leading-none relative"> {% endcomment %}
   <div class="card product-card {% unless featured_media %} no-media{% endunless %}{% if product.available and show_quick_add and mobile_quick_add %} mobile:with-quick-add{% endif %} flex flex-col leading-none relative">
     {% if product.tags contains 'personalised' %}
       <div class="online-strap-container">
@@ -162,7 +168,7 @@
     {% endif %}
     {%- if featured_media -%}
       <div class="product-card__media-wrapper relative h-auto">
-        {%- if show_quick_view and product.variants.size <= 1 -%}
+        {% comment %} {%- if show_quick_view and product.variants.size <= 1 -%}
           {%- capture quick_view_id -%}Quickview-{{ section_id }}{% if block_id != blank %}-{{ block_id }}{% endif %}-{{ product_id }}{%- endcapture -%}
           {%- assign product_form_id = 'ProductForm-' | append: section_id | append: '-' | append: product_id -%}
 
@@ -198,7 +204,7 @@
               </button>
             {%- endform -%}
           {%- endif -%}
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
 
         {%- if show_rating -%}
           {%- liquid
@@ -269,63 +275,6 @@
             <p class="personalise-strap">PERSONALISE ME</p>
           </div>
           {% endif %}
-        {%- if product.available and product.vendor != "Legends" -%}
-          {%- if show_quick_add -%}
-            <div class="quick-add flex justify-end md:justify-center absolute w-full z-1 pointer-events-none">
-              {%- if product.variants.size == 1 -%}
-                {%- capture product_form_id -%}QuickAddProductForm-{{ section_id }}-{{ product_id }}{%- endcapture -%}
-                {%- form 'product', product, is: 'product-form', id: product_form_id -%}
-                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
-                  {%- liquid
-                    if product.template_suffix != 'pre-order'
-                      assign quick_add_label = 'products.product.add_to_cart' | t
-                    else
-                      assign quick_add_label = 'products.product.pre_order' | t
-                    endif
-                  -%}
-                  <button type="submit" class="button button--primary pointer-events-auto md:opacity-0" is="hover-button" data-variant-id="{{ product.selected_or_first_available_variant.id }}" aria-label="{{ quick_add_label | escape }}">
-                    <span class="btn-fill" data-fill></span>
-                    <span class="btn-text">
-                      {%- render 'icon', icon: 'cart', size: 'sm', class: 'md:hidden' -%}
-                      <span class="hidden md:block" data-sold-out="{{ 'products.product.sold_out' | t | escape }}">
-                        {{- quick_add_label -}}
-                      </span>
-                    </span>
-                  </button>
-                {%- endform -%}
-              {%- else -%}
-                {%- if show_quick_view -%}
-                  <button type="button" class="button button--primary pointer-events-auto md:opacity-0" is="hover-button" aria-controls="{{ quick_view_id }}" aria-expanded="false" aria-label="{{ 'products.product.choose_options' | t | escape }}">
-                    <span class="btn-fill" data-fill></span>
-                    <span class="btn-text">
-                      {%- render 'icon', icon: 'cart', size: 'sm', class: 'md:hidden' -%}
-                      <span class="hidden md:block">
-                        {{- 'products.product.choose_options' | t -}}
-                      </span>
-                    </span>
-                  </button>
-                {%- else -%}
-                  <a href="{{ product_url }}" class="button button--primary pointer-events-auto md:opacity-0" is="hover-link" aria-label="{{ 'products.product.view_product' | t | escape }}">
-                    <span class="btn-fill" data-fill></span>
-                    <span class="btn-text">
-                      {%- render 'icon', icon: 'cart', size: 'sm', class: 'md:hidden' -%}
-                      <span class="hidden md:block">
-                        {{- 'products.product.view_product' | t -}}
-                      </span>
-                    </span>
-                  </a>
-                {%- endif -%}
-              {%- endif -%}
-            </div>
-          {%- endif -%}
-        {%- else -%}
-          <div class="quick-add flex justify-center absolute w-full z-1 pointer-events-none">
-            <button type="button" class="button button--secondary button--blur" disabled="disabled">
-              {{- 'products.product.sold_out' | t -}}
-            </button>
-          </div>
-        {%- endif -%}
-
         {%- if show_countdown and product.metafields.theme.countdown.value != blank -%}
           {%- liquid
             assign now_time = 'now' | date: '%s' | times: 1
@@ -366,7 +315,7 @@
         <span class="block aspect-{{ image_ratio }}"></span>
       </div>
     {%- endif -%}
-    <div class="product-card__content grow flex flex-col{% if featured_media %} justify-start text-{{ settings.card_text_alignment }}{% else %} justify-center items-center absolute top-0 left-0 w-full h-full{% endif %}">
+    <div class="product-card__content flex flex-col{% if featured_media %} justify-start text-{{ settings.card_text_alignment }}{% else %} justify-center items-center absolute top-0 left-0 w-full h-full{% endif %}">
       {%- if show_vendor -%}
         <div class="product-card__top w-full">
           
@@ -459,6 +408,65 @@
         {%- endfor -%}
       {%- endif -%}
     </div>
+
+    {%- if product.available  -%}
+      {%- if show_quick_add -%}
+        <div class="quick-add product-card__quick-add flex w-full justify-center mt-3">
+          {%- if product.variants.size == 1 -%}
+            {%- capture product_form_id -%}QuickAddProductForm-{{ section_id }}-{{ product_id }}{%- endcapture -%}
+            {%- form 'product', product, is: 'product-form', id: product_form_id -%}
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+              {%- liquid
+                if product.template_suffix != 'pre-order'
+                  assign quick_add_label = 'products.product.add_to_cart' | t
+                else
+                  assign quick_add_label = 'products.product.pre_order' | t
+                endif
+              -%}
+              <button type="submit" class="button button--primary w-full" is="hover-button" data-variant-id="{{ product.selected_or_first_available_variant.id }}" aria-label="{{ quick_add_label | escape }}">
+                <span class="btn-fill" data-fill></span>
+                <span class="btn-text">
+                  {%- render 'icon', icon: 'cart', size: 'sm', class: 'md:hidden' -%}
+                  <span class="hidden md:block" data-sold-out="{{ 'products.product.sold_out' | t | escape }}">
+                    {{- quick_add_label -}}
+                  </span>
+                </span>
+              </button>
+            {%- endform -%}
+          {%- else -%}
+            {%- if show_quick_view -%}
+              <a href="{{ product_url }}">
+                <button class="button button--primary w-full" is="hover-button" aria-controls="{{ quick_view_id }}" aria-expanded="false" aria-label="{{ 'products.product.choose_options' | t | escape }}">
+                  <span class="btn-fill" data-fill></span>
+                  <span class="btn-text">
+                    {%- render 'icon', icon: 'cart', size: 'sm', class: 'md:hidden' -%}
+                    <span class="hidden md:block">
+                      {{- 'products.product.choose_options' | t -}}
+                    </span>
+                  </span>
+                </button>
+              </a>
+            {%- else -%}
+              <a href="{{ product_url }}" class="button button--primary w-full" is="hover-link" aria-label="{{ 'products.product.view_product' | t | escape }}">
+                <span class="btn-fill" data-fill></span>
+                <span class="btn-text">
+                  {%- render 'icon', icon: 'cart', size: 'sm', class: 'md:hidden' -%}
+                  <span class="hidden md:block">
+                    {{- 'products.product.view_product' | t -}}
+                  </span>
+                </span>
+              </a>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <div class="quick-add product-card__quick-add flex w-full justify-center mt-3">
+        <button type="button" class="button button--secondary button--blur w-full" disabled="disabled">
+          {{- 'products.product.sold_out' | t -}}
+        </button>
+      </div>
+    {%- endif -%}
 
     {%- if show_icon_list -%}
       {%- if settings.product_icon_list_metafield != blank -%}

@@ -112,7 +112,7 @@
 {%- endif  -%}
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
-  <div class="page-width{% if media_count > 0 %}{% if section.settings.full_width %} page-width--full{% endif %}{% else %} page-width--narrow{% endif %} relative">
+  <div class="page-width relative">
     <div class="featured-product product product--{{ section.settings.gallery_layout }}{% if media_count == 0 %} no-media{% endif %} flex flex-col items-start lg:grid gap-5 w-full relative">
       {%- if media_count > 0 -%}
         <div class="product__gallery-container flex flex-col gap-0 md:gap-8 relative w-full">
@@ -627,6 +627,7 @@
                 heading: block.settings.heading,
                 show_vendor: block.settings.show_vendor,
                 show_price: block.settings.show_price,
+                show_quick_add: true
               -%}
 
             {%- when 'liquid' -%}
@@ -1366,12 +1367,6 @@
           "id": "disclaimer_text",
           "label": "Disclaimer Text",
           "default": "Please double-check your chosen name and number, as all personalized details—including custom names, numbers, or official player names— cannot be returned or exchanged."
-        },
-        {
-          "type": "textarea",
-          "id": "online_text",
-          "label": "Online Text",
-          "default": "This item is an online exclusive and is shipped directly from a third-party supplier. Orders containing other items may be shipped separately. Please allow up to 10-15 working days for delivery or collection. Express delivery is not available for this item. Personalised items cannot be exchanged, please check all details carefully before placing your order."
         }
       ]
     },
