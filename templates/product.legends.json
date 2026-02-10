@@ -53,7 +53,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": true,
+            "show_quantity_selector": false,
             "show_price": true,
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true,
@@ -112,10 +112,19 @@
         "complementary",
         "sticky_buy_button"
       ],
+      "custom_css": [
+        ":checked + .label-swatch {background-color: rgb(var(--color-foreground)); color: white !important;}",
+        ".label-swatch::after {border-color: rgb(var(--color-foreground)); --tw-shadow-colored: 0 0 0 1px #9d9d9d;}",
+        ".button::after {border: 1px solid #9d9d9d;}",
+        ".swatches {gap: 6px;}",
+        ".product__inventory > div {padding: 5px 10px;}",
+        ".product-form__buttons button {border-radius: 80px; background-color: #b86645;}",
+        ".complementary-product__add-to-cart-container .button {padding: 6px 20px; border-radius: 8px; background-color: #b86645;}"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "media_size": 66,
-        "gallery_layout": "scroll",
+        "gallery_layout": "thumbnail",
         "thumbnail_position": "beside",
         "image_ratio": "adapt_first",
         "image_zoom": "lightbox",
