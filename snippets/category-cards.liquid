@@ -1,0 +1,68 @@
+{% comment %} 
+    This is for the featured collection v2 and is hardcoded
+{% endcomment %}
+<style>
+    .card.product-card.category-card{
+        position:relative;
+        border-radius: 20px;
+        overflow:hidden !important;
+    }
+    .category-card-content{
+        position:absolute;
+        padding:30px;
+        color: #FFF;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        bottom:0;
+        display:flex;
+        width:100%;
+        align-items:center;
+        gap:10px;
+        svg{
+            margin-top:3px;
+        }
+    }
+</style>
+<div class="card product-card category-card">
+    <a href="{{shop.url}}/collections/legends-x-swans-x-death-row">
+        <div class="img-container">
+            <img src="https://cdn.shopify.com/s/files/1/0916/6998/7702/files/LegendsDeathRow.jpg?v=1770758505">
+        </div>
+    </a>
+    <div class="category-card-content">
+        <span>Legends X Death Row</span> {% render 'arrow-svg' %}
+    </div>
+</div>
+<div class="card product-card category-card">
+    <a href="{{ shop.url }}/collections/away">
+        <div class="img-container">
+            <img src="https://cdn.shopify.com/s/files/1/0916/6998/7702/files/Jersey.jpg?v=1770758505">
+        </div>
+    </a>
+    <div class="category-card-content">
+        <span>Away Jersey</span> {% render 'arrow-svg' %}
+    </div>
+</div>
+<div class="card product-card category-card">
+    <a href="{{shop.url}}/collections/adult-outerwear">
+        <div class="img-container">
+            <img src="https://cdn.shopify.com/s/files/1/0916/6998/7702/files/Jacket.jpg?v=1770758505">
+        </div>
+    </a>
+    <div class="category-card-content">
+        <span>Jackets</span> {% render 'arrow-svg' %}
+    </div>
+</div>
+<div class="card product-card category-card">
+    <a href="{{shop.url}}/collections/training-travel">
+        <div class="img-container">
+            <img src="https://cdn.shopify.com/s/files/1/0916/6998/7702/files/TrainingTravel.jpg?v=1770758505">
+        </div>
+    </a>
+    <div class="category-card-content">
+        <span>Training & Travel</span> {% render 'arrow-svg' %}
+    </div>
+</div>
