@@ -15,7 +15,7 @@
         "slide_EVMFB4": {
           "type": "slide",
           "settings": {
-            "mobile_image": "shopify://shop_images/banner_mob_1.png",
+            "mobile_image": "shopify://shop_images/banner_mob_1_2fd9464d-44e5-449a-84b4-fcf8b6254bee.jpg",
             "desktop_image": "shopify://shop_images/banner_desk_1.jpg",
             "url": "shopify://collections/legends-x-swans-x-death-row",
             "title": "Legends x Swans x Death Row",
@@ -432,6 +432,7 @@
         "image_4bFbnb",
         "image_j6HXdt"
       ],
+      "disabled": true,
       "custom_css": [
         ".heading {letter-spacing: 1px; font-size: 1.8rem;}",
         ".media img {object-position: top center;}"
