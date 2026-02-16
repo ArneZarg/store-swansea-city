@@ -12,29 +12,6 @@
     "slideshow_v2_KMWgp3": {
       "type": "slideshow-v2",
       "blocks": {
-        "slide_6eznd4": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "mobile_image": "shopify://shop_images/Swans-x-Snoop-25-26-Store-Banner-1200x1850px-V01.png",
-            "desktop_image": "shopify://shop_images/Swans-x-Snoop-25-26-Store-Banner-1850x600px-V01.png",
-            "url": "shopify://collections/swans-x-snoop-dogg",
-            "title": "Swans x Snoop Dogg",
-            "top_text": "",
-            "subtitle": "Exclusive Swans x Snoop Dogg collection. Limited quantities",
-            "btn_txt": "SHOP NOW",
-            "title_color": "#ffffff",
-            "top_txt_color": "#ffffff",
-            "subtitle_color": "#ffffff",
-            "btn_color": "#ffffff",
-            "btn_txt_color": "#000000",
-            "overlay": false,
-            "title_padding_bottom_m": 25,
-            "subtitle_padding_bottom_m": 25,
-            "title_padding_bottom_d": 25,
-            "subtitle_padding_bottom_d": 25
-          }
-        },
         "slide_EVMFB4": {
           "type": "slide",
           "settings": {
@@ -126,7 +103,6 @@
         }
       },
       "block_order": [
-        "slide_6eznd4",
         "slide_EVMFB4",
         "slide_fmYJi4",
         "slide_BFkQYR",
