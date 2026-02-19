@@ -14,7 +14,6 @@
       "blocks": {
         "slide_NFmG7W": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "mobile_image": "shopify://shop_images/Swans-x-Snoop-25-26-Store-Banner-1200x1850px-V01.png",
             "desktop_image": "shopify://shop_images/Swans-x-Snoop-Range-Launch-25-26-Store-Banner-Swans-x-Snoop-25-26-Store-Banner-2446x1080px.jpg",
@@ -256,7 +255,7 @@
       "name": "t:sections.announcement-banner.presets.name",
       "settings": {
         "show_subheading": true,
-        "title": "<p>LEGENDS X SWANS X DEATH ROW COLLECTION</p>",
+        "title": "<p>SWANSEA CITY X SNOOP DOGG COLLECTION</p>",
         "subheading": "<p>ON SALE NOW</p>"
       }
     },
@@ -264,7 +263,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "legends-x-swans-x-death-row",
+        "collection": "swanseacity-x-snoop-dogg",
         "products": [],
         "product_limit": 6,
         "columns": 4,
@@ -272,7 +271,7 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "heading": "Legends x Death Row Collection",
+        "heading": "Swansea City x Snoop Dogg Collection",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",

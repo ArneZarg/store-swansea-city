@@ -24,7 +24,7 @@
         "text_9pJFjq": {
           "type": "text",
           "settings": {
-            "text": "Legends x death row range restock + new lines added",
+            "text": "Swansea City x Snoop Dogg Collection - available now",
             "text_size": 24,
             "text_font": "heading",
             "highlighted_text": "none",
@@ -287,8 +287,8 @@
             "menu_width": "large",
             "show_menu_image": false,
             "button_label": "Shop All",
-            "button_link": "https://store.swanseacity.com/collections/fashion",
-            "promo_image_1": "shopify://shop_images/LegendsxDeathrow-Range-25-26-Launch-4x5-V03_c1ef14bf-c4e6-4e24-b95a-09ee0f2e64ea.png",
+            "button_link": "https://store.swanseacity.com/collections/swanseacity-x-snoop-dogg",
+            "promo_image_1": "shopify://shop_images/Swans-x-Snoop-Range-Launch-25-26-4x5-1-V01.png",
             "promo_mobile_only_1": false,
             "promo_image_ratio_1": "portrait",
             "promo_heading_1": "",
