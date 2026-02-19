@@ -27,7 +27,7 @@
             "subtitle_color": "#ffffff",
             "btn_color": "#ffffff",
             "btn_txt_color": "#000000",
-            "overlay": false,
+            "overlay": true,
             "title_padding_bottom_m": 20,
             "subtitle_padding_bottom_m": 25,
             "title_padding_bottom_d": 20,
