@@ -104,7 +104,7 @@
           </div>
           <ul class="swatches swatches--{{ settings.rounded_swatch }}{% if block.settings.color_swatch_type == 'variant' %} swatches--variant{% endif %} flex items-start flex-wrap gap-4">
             {%- for value in option.values -%}
-              {%if value.variant.inventory_quantity > 4 %}
+              {%comment%}{%if value.variant.inventory_quantity > 4 %}{%endcomment %}
               <li>
                 <magnet-element class="block">
                   <input
@@ -194,7 +194,7 @@
                   {%- endif -%}
                 </magnet-element>
               </li>
-              {% endif %}
+              {%comment%}{% endif %}{%endcomment %}
             {%- endfor -%}
           </ul>
         </fieldset>
