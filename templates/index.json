@@ -36,7 +36,6 @@
         },
         "slide_EVMFB4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "mobile_image": "shopify://shop_images/SwanseaCarousel-01-Larger.jpg",
             "desktop_image": "shopify://shop_images/banner_desk_1.jpg",
