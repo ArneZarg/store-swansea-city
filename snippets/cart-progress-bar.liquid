@@ -3,9 +3,9 @@
 {% if customer_country == "GB" %}
     {% assign free_shipping_value = settings.free_shipping_uk | times: 100 %}
     {% assign free_shipping_js = settings.free_shipping_uk | times: 1.0 %}
-
+{% comment %} 
     {% assign free_shipping_value = settings.free_shipping_world | times: 100 %}
-    {% assign free_shipping_js = settings.free_shipping_world | times: 1.0 %}
+    {% assign free_shipping_js = settings.free_shipping_world | times: 1.0 %} {% endcomment %}
 
 
 {% assign cart_total = cart.total_price %}
