@@ -3,10 +3,10 @@
 {% if customer_country == "GB" %}
     {% assign free_shipping_value = settings.free_shipping_uk | times: 100 %}
     {% assign free_shipping_js = settings.free_shipping_uk | times: 1.0 %}
-{% else %}
+
     {% assign free_shipping_value = settings.free_shipping_world | times: 100 %}
     {% assign free_shipping_js = settings.free_shipping_world | times: 1.0 %}
-{% endif %}
+
 
 {% assign cart_total = cart.total_price %}
 {% assign remainder = free_shipping_value | minus: cart_total %}
@@ -79,3 +79,4 @@
         remainderTxt.textContent = `${money_format}`;
     }
 </script> {% endcomment %}
+{% endif %}
