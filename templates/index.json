@@ -263,7 +263,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "new-in",
+        "collection": "summer-travel-essentials",
         "products": [],
         "product_limit": 6,
         "columns": 4,
