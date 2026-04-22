@@ -165,7 +165,12 @@
       <div class="online-strap-container">
           <p class="online-strap">ONLINE<br>ONLY</p>
       </div>
+    {% elsif product.tags contains 'online-only' %}
+      <div class="online-strap-container">
+          <p class="online-strap">ONLINE<br>ONLY</p>
+      </div>
     {% endif %}
+    
     {%- if featured_media -%}
       <div class="product-card__media-wrapper relative h-auto">
         {% comment %} {%- if show_quick_view and product.variants.size <= 1 -%}
