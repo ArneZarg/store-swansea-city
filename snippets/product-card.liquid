@@ -161,7 +161,7 @@
   -%}
   {% comment %} <div class="card product-card {% unless featured_media %} no-media{% endunless %}{% if product.available and show_quick_add and mobile_quick_add %} mobile:with-quick-add{% endif %} flex flex-col leading-none relative"> {% endcomment %}
   <div class="card product-card {% unless featured_media %} no-media{% endunless %}{% if product.available and show_quick_add and mobile_quick_add %} mobile:with-quick-add{% endif %} flex flex-col leading-none relative">
-    {% if product.tags contains 'personalised' or 'online-only' %}
+    {% if product.tags contains 'personalised' %}
       <div class="online-strap-container">
           <p class="online-strap">ONLINE<br>ONLY</p>
       </div>
