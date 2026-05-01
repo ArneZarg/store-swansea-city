@@ -58,6 +58,7 @@
         },
         "slide_fmYJi4": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "mobile_image": "shopify://shop_images/Up-to-70_-off-Retail-Launch-2026-4x5-V01.png",
             "desktop_image": "shopify://shop_images/Up-to-70_-off-Retail-Launch-2026-Store-Banner-2446x1800px-V01.png",
