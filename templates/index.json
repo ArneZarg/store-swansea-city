@@ -12,6 +12,28 @@
     "slideshow_v2_KMWgp3": {
       "type": "slideshow-v2",
       "blocks": {
+        "slide_fmYJi4": {
+          "type": "slide",
+          "settings": {
+            "mobile_image": "shopify://shop_images/Up-to-70_-off-Retail-Launch-2026-4x5-V01.png",
+            "desktop_image": "shopify://shop_images/Up-to-70_-off-Retail-Launch-2026-Store-Banner-2446x1080px-V01.png",
+            "url": "shopify://collections/outlet",
+            "title": "",
+            "top_text": "",
+            "subtitle": "",
+            "btn_txt": "SHOP NOW",
+            "title_color": "#ffffff",
+            "top_txt_color": "#e68e67",
+            "subtitle_color": "#ffffff",
+            "btn_color": "#ffffff",
+            "btn_txt_color": "#000000",
+            "overlay": false,
+            "title_padding_bottom_m": 20,
+            "subtitle_padding_bottom_m": 20,
+            "title_padding_bottom_d": 20,
+            "subtitle_padding_bottom_d": 20
+          }
+        },
         "slide_NFmG7W": {
           "type": "slide",
           "settings": {
@@ -54,29 +76,6 @@
             "subtitle_padding_bottom_m": 25,
             "title_padding_bottom_d": 20,
             "subtitle_padding_bottom_d": 25
-          }
-        },
-        "slide_fmYJi4": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "mobile_image": "shopify://shop_images/Up-to-70_-off-Retail-Launch-2026-4x5-V01.png",
-            "desktop_image": "shopify://shop_images/Up-to-70_-off-Retail-Launch-2026-Store-Banner-2446x1080px-V01.png",
-            "url": "shopify://collections/outlet",
-            "title": "",
-            "top_text": "",
-            "subtitle": "",
-            "btn_txt": "SHOP NOW",
-            "title_color": "#ffffff",
-            "top_txt_color": "#e68e67",
-            "subtitle_color": "#ffffff",
-            "btn_color": "#ffffff",
-            "btn_txt_color": "#000000",
-            "overlay": false,
-            "title_padding_bottom_m": 20,
-            "subtitle_padding_bottom_m": 20,
-            "title_padding_bottom_d": 20,
-            "subtitle_padding_bottom_d": 20
           }
         },
         "slide_BFkQYR": {
@@ -126,9 +125,9 @@
         }
       },
       "block_order": [
+        "slide_fmYJi4",
         "slide_NFmG7W",
         "slide_EVMFB4",
-        "slide_fmYJi4",
         "slide_BFkQYR",
         "slide_aPcrem"
       ],
