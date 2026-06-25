@@ -138,6 +138,7 @@
       "blocks": {
         "mega_menu_jbw6X8": {
           "type": "mega_menu",
+          "disabled": true,
           "settings": {
             "menu_title": "Training & Travel",
             "menu_width": "medium",
