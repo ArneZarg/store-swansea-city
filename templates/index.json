@@ -80,6 +80,7 @@
         },
         "slide_BFkQYR": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "mobile_image": "shopify://shop_images/banner_mob_4_2ae51dbc-946d-47a1-88af-ef5c1f622b82.jpg",
             "desktop_image": "shopify://shop_images/banner_desk_4.jpg",
@@ -103,6 +104,7 @@
         },
         "slide_aPcrem": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "mobile_image": "shopify://shop_images/banner_mob_3_714e2dbf-6845-4b9c-a7b9-4ec4dfb8a342.jpg",
             "desktop_image": "shopify://shop_images/banner_desk_3.jpg",
