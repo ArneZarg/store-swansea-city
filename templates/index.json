@@ -266,7 +266,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "adult-training-travel",
+        "collection": "training-collection",
         "products": [],
         "product_limit": 6,
         "columns": 4,
@@ -713,6 +713,7 @@
         "image_hJ99JL",
         "image_PgiqEG"
       ],
+      "disabled": true,
       "custom_css": [
         ".collection-list__item {background-color: unset; max-width: unset;}",
         ".collection-list__item picture {max-width: 100%; max-height: unset;}",
@@ -810,6 +811,7 @@
         "image_wdzgbh",
         "image_Y8BBmL"
       ],
+      "disabled": true,
       "custom_css": [
         ".collection-list__item {background-color: unset; max-width: unset;}",
         ".collection-list__item picture {max-width: 100%; max-height: unset;}",
