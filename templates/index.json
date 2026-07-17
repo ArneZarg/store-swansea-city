@@ -39,7 +39,7 @@
           "settings": {
             "mobile_image": "shopify://shop_images/Travel_2026-27-Store_Site_Banner-1-1200x1850_1.jpg",
             "desktop_image": "shopify://shop_images/Travel_2026-27-Store_Site_Banner-1-2446x1080_1.jpg",
-            "url": "shopify://collections/travel-collection-25-26",
+            "url": "shopify://collections/travel-collection",
             "title": "Travel Collection 26-27",
             "top_text": "",
             "subtitle": "",
@@ -299,7 +299,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "travel-collection-25-26",
+        "collection": "travel-collection",
         "products": [],
         "product_limit": 6,
         "columns": 4,
