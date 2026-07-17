@@ -12,6 +12,28 @@
     "slideshow_v2_KMWgp3": {
       "type": "slideshow-v2",
       "blocks": {
+        "slide_BFkQYR": {
+          "type": "slide",
+          "settings": {
+            "mobile_image": "shopify://shop_images/Training_2026-27-Store_Site_Banner-1-1200x1850.jpg",
+            "desktop_image": "shopify://shop_images/Training_2026-27-Store_Site_Banner-1-2446x1080.jpg",
+            "url": "shopify://collections/training-collection",
+            "title": "Training Range 26-27",
+            "top_text": "",
+            "subtitle": "",
+            "btn_txt": "SHOP NOW",
+            "title_color": "#FBFCFD",
+            "top_txt_color": "#ffffff",
+            "subtitle_color": "#1d3466",
+            "btn_color": "#F4F5F8",
+            "btn_txt_color": "#0C0C0C",
+            "overlay": false,
+            "title_padding_bottom_m": 20,
+            "subtitle_padding_bottom_m": 20,
+            "title_padding_bottom_d": 20,
+            "subtitle_padding_bottom_d": 20
+          }
+        },
         "slide_fmYJi4": {
           "type": "slide",
           "settings": {
@@ -78,29 +100,6 @@
             "subtitle_padding_bottom_d": 25
           }
         },
-        "slide_BFkQYR": {
-          "type": "slide",
-          "settings": {
-            "mobile_image": "shopify://shop_images/Training_2026-27-Store_Site_Banner-1-1200x1850.jpg",
-            "desktop_image": "shopify://shop_images/Training_2026-27-Store_Site_Banner-1-2446x1080.jpg",
-            "url": "shopify://collections/training-collection",
-            "title": "Training Range 26-27",
-            "top_text": "",
-            "subtitle": "",
-            "btn_txt": "SHOP NOW",
-            "title_color": "#1d3466",
-            "top_txt_color": "#ffffff",
-            "subtitle_color": "#1d3466",
-            "btn_color": "#1d3466",
-            "btn_txt_color": "#ffffff",
-            "overlay": false,
-            "title_padding_bottom_m": 20,
-            "subtitle_padding_bottom_m": 20,
-            "title_padding_bottom_d": 20,
-            "subtitle_padding_bottom_d": 20,
-            "middle_img": "shopify://shop_images/3_logos.png"
-          }
-        },
         "slide_aPcrem": {
           "type": "slide",
           "disabled": true,
@@ -126,10 +125,10 @@
         }
       },
       "block_order": [
+        "slide_BFkQYR",
         "slide_fmYJi4",
         "slide_NFmG7W",
         "slide_EVMFB4",
-        "slide_BFkQYR",
         "slide_aPcrem"
       ],
       "name": "Home Slideshow V2",
