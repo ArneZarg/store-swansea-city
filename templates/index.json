@@ -14,16 +14,15 @@
       "blocks": {
         "slide_fmYJi4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "mobile_image": "shopify://shop_images/Up-to-70_-off-Retail-Launch-2026-Store-Banner-1850x1200px-V01.png",
-            "desktop_image": "shopify://shop_images/Up-to-70_-off-Retail-Launch-2026-Store-Banner-2446x1080px-V01.png",
-            "url": "shopify://collections/outlet",
-            "title": "END OF SEASON SALE",
+            "mobile_image": "shopify://shop_images/Travel_2026-27-Store_Site_Banner-1-1200x1850.jpg",
+            "desktop_image": "shopify://shop_images/Travel_2026-27-Store_Site_Banner-1-2446x1080.jpg",
+            "url": "shopify://collections/travel-collection-25-26",
+            "title": "Travel Range 26-27",
             "top_text": "",
             "subtitle": "",
             "btn_txt": "SHOP NOW",
-            "title_color": "#d22727",
+            "title_color": "#FBF7F7",
             "top_txt_color": "#e68e67",
             "subtitle_color": "#ffffff",
             "btn_color": "#ffffff",
