@@ -15,8 +15,8 @@
         "slide_BFkQYR": {
           "type": "slide",
           "settings": {
-            "mobile_image": "shopify://shop_images/Training_2026-27-Store_Site_Banner-1-1200x1850.jpg",
-            "desktop_image": "shopify://shop_images/Training_2026-27-Store_Site_Banner-1-2446x1080.jpg",
+            "mobile_image": "shopify://shop_images/Training_2026-27-Store_Site_Banner-1-1200x1850_1.jpg",
+            "desktop_image": "shopify://shop_images/Training_2026-27-Store_Site_Banner-1-2446x1080_1.jpg",
             "url": "shopify://collections/training-collection",
             "title": "Training Range 26-27",
             "top_text": "",
@@ -56,28 +56,6 @@
             "subtitle_padding_bottom_d": 50
           }
         },
-        "slide_NFmG7W": {
-          "type": "slide",
-          "settings": {
-            "mobile_image": "shopify://shop_images/Swans-x-Snoop-25-26-Store-Banner-1200x1850px-V01.png",
-            "desktop_image": "shopify://shop_images/Swans-x-Snoop-Range-Launch-25-26-Store-Banner-Swans-x-Snoop-25-26-Store-Banner-2446x1080px.jpg",
-            "url": "shopify://collections/swanseacity-x-snoop-dogg",
-            "title": "Swansea City x Snoop Dogg",
-            "top_text": "",
-            "subtitle": "Exclusive Swansea City x Snoop Dogg collection. Limited quantities",
-            "btn_txt": "SHOP NOW",
-            "title_color": "#ffffff",
-            "top_txt_color": "#ffffff",
-            "subtitle_color": "#ffffff",
-            "btn_color": "#ffffff",
-            "btn_txt_color": "#000000",
-            "overlay": true,
-            "title_padding_bottom_m": 20,
-            "subtitle_padding_bottom_m": 25,
-            "title_padding_bottom_d": 20,
-            "subtitle_padding_bottom_d": 25
-          }
-        },
         "slide_EVMFB4": {
           "type": "slide",
           "settings": {
@@ -94,6 +72,29 @@
             "btn_color": "#ffffff",
             "btn_txt_color": "#000000",
             "overlay": false,
+            "title_padding_bottom_m": 20,
+            "subtitle_padding_bottom_m": 25,
+            "title_padding_bottom_d": 20,
+            "subtitle_padding_bottom_d": 25
+          }
+        },
+        "slide_NFmG7W": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "mobile_image": "shopify://shop_images/Swans-x-Snoop-25-26-Store-Banner-1200x1850px-V01.png",
+            "desktop_image": "shopify://shop_images/Swans-x-Snoop-Range-Launch-25-26-Store-Banner-Swans-x-Snoop-25-26-Store-Banner-2446x1080px.jpg",
+            "url": "shopify://collections/swanseacity-x-snoop-dogg",
+            "title": "Swansea City x Snoop Dogg",
+            "top_text": "",
+            "subtitle": "Exclusive Swansea City x Snoop Dogg collection. Limited quantities",
+            "btn_txt": "SHOP NOW",
+            "title_color": "#ffffff",
+            "top_txt_color": "#ffffff",
+            "subtitle_color": "#ffffff",
+            "btn_color": "#ffffff",
+            "btn_txt_color": "#000000",
+            "overlay": true,
             "title_padding_bottom_m": 20,
             "subtitle_padding_bottom_m": 25,
             "title_padding_bottom_d": 20,
@@ -127,8 +128,8 @@
       "block_order": [
         "slide_BFkQYR",
         "slide_fmYJi4",
-        "slide_NFmG7W",
         "slide_EVMFB4",
+        "slide_NFmG7W",
         "slide_aPcrem"
       ],
       "name": "Home Slideshow V2",
