@@ -50,7 +50,7 @@
             "btn_color": "#ffffff",
             "btn_txt_color": "#000000",
             "overlay": false,
-            "title_padding_bottom_m": 20,
+            "title_padding_bottom_m": 35,
             "subtitle_padding_bottom_m": 20,
             "title_padding_bottom_d": 50,
             "subtitle_padding_bottom_d": 20
