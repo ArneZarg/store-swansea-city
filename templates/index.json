@@ -52,7 +52,7 @@
             "overlay": false,
             "title_padding_bottom_m": 20,
             "subtitle_padding_bottom_m": 20,
-            "title_padding_bottom_d": 30,
+            "title_padding_bottom_d": 50,
             "subtitle_padding_bottom_d": 20
           }
         },
