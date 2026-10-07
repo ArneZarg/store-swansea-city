@@ -151,7 +151,7 @@
     endif
 
     if product.vendor == "Legends"
-      assign product.available = false
+      assign renamed_variable_product_2e_available = false
     endif
   -%}
   <div class="card product-card {% unless featured_media %} no-media{% endunless %}{% if product.available and show_quick_add and mobile_quick_add %} mobile:with-quick-add{% endif %} flex flex-col leading-none relative">
@@ -560,3 +560,13 @@
 {%- else -%}
   {%- render 'product-card-placeholder', placeholder: 'image', image_ratio: image_ratio, text_alignment: text_alignment, show_vendor: show_vendor, show_rating: show_rating -%}
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "      assign product.available = false"
+  to: "      assign renamed_variable_product_2e_available = false"
+  position: 3885..3943
+{% endcomment %}
